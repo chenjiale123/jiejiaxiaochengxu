@@ -1,0 +1,16 @@
+<!--pagesSinger//pages/viewWechat/viewWechat.wxml-->
+<view class="contain">
+<view class="tishi">
+<text>微信服务号</text>
+<text>jiejiajujia</text>
+</view>
+
+<view class="code">
+
+<image src="../../../image/erweima@2x.jpg" bindlongtap="saveImg" data-url="../../../image/erweima@2x.jpg"></image>
+</view>
+<view class="phone">
+<text>长按保存图片</text>
+<text>通过微信 “扫一扫” 二维码，找到我们</text>
+</view>
+</view>

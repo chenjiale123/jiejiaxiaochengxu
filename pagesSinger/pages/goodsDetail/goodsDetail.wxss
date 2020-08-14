@@ -1,0 +1,726 @@
+/* pages/goodsDetail/goodsDetail.wxss */
+.contain{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.number{
+  display: inline-block;
+  width:12rpx;
+height:12rpx;
+background:rgba(255,76,79,1);
+border:2rpx solid rgba(255,255,255,1);
+border-radius:50%;
+position: absolute;
+top: 0rpx;
+right: 14rpx;
+}
+.main{
+  width: 100%;
+  height: 68rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  padding-top: 66rpx;
+  /* background-color: #fff; */
+}
+.logo{
+  width:174rpx;
+  height:68rpx;
+  background:rgba(255,255,255,1);
+  border:1px solid rgba(230,230,230,1);
+  border-radius:32rpx;
+  position: fixed;
+  top: 66rpx;
+  left: 3%;
+  display: flex;
+  justify-content: space-between;
+  padding: 8rpx 0;
+  box-sizing: border-box;
+}
+.logo>.left{
+  width: 50%;
+  height: 100%;
+  border-right: 1px solid rgba(230,230,230,1); 
+  text-align: center;
+  vertical-align: middle;
+}
+.logo>.left>image{
+  width: 38rpx;
+  height: 38rpx;
+vertical-align: middle;
+}
+.logo>.right{
+  width: 50%;
+  height: 100%;
+  text-align: center;
+
+}
+
+.logo>.right>image{
+  width: 38rpx;
+  height: 38rpx;
+  vertical-align: middle;
+}
+.lunbo{
+  width: 100%;
+  height: 750rpx;
+  position: relative;
+}
+.lunbo>image{
+  width: 100%;
+  height: 424rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+swiper{
+  width: 100%;
+  height: 100%;
+}
+swiper image{
+  width: 100%;
+  height: 100%;
+}
+swiper-item{
+  position: relative;
+}
+swiper .num{
+  width:128rpx;
+height:48rpx;
+background:rgba(0,0,0,0.3);
+
+border-radius:26rpx 24rpx 24rpx 0px;
+position: absolute;
+bottom: 60rpx;
+left: 30rpx;
+text-align: center;
+vertical-align: middle;
+}
+swiper .num>image{
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+}
+swiper .num>text{
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  vertical-align: middle;
+}
+.content{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius:30rpx 30rpx 0px 0px;
+  background-color: rgba(242,245,247,1);
+  position: relative;
+  top: -25rpx;
+  padding-bottom: 98rpx;
+}
+.content>.product{
+width: 100%;
+height: auto;
+overflow: hidden;
+background-color: #fff;
+border-radius:30rpx 30rpx 0px 0px;
+padding: 0 30rpx;
+box-sizing: border-box;
+}
+.content>.product>.title{
+  padding-top: 30rpx;
+  display: inline-block;
+
+}.content>.product>.title>.price{
+  display: inline-block;
+}
+.content>.product>.title>.price>text:nth-child(1){
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(255,76,79,1);
+}
+.content>.product>.title>.price>text:nth-child(2){
+  font-size:48rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(255,76,79,1);
+}
+.content>.product>.title>.price>text:nth-child(3){
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(26,26,26,1);
+  margin-left: 10rpx;
+}
+.content>.product>.title>.sale{
+  display: inline-block;
+  margin-left: 26rpx;
+  /* border-left: 1px solid rgba(224,224,224,1); */
+  display: inline-block;
+}
+.content>.product>.title>.sale>text{
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+}
+.content>.product>.head{
+  display: block;
+  margin-top: 30rpx;
+  font-size:34rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(26,26,26,1);
+}
+.content>.product>.into{
+  display: block;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(179,179,179,1);
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.spec{
+  margin-top: 20rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+box-sizing: border-box;
+line-height: 100rpx;
+}
+.spec>.left>text:nth-child(1){
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(26,26,26,1);
+  vertical-align: middle;
+}
+.spec>.left>text:nth-child(2){
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-left: 51rpx;
+  vertical-align: middle;
+}
+.spec>.right>image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.comment{
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.comment>.header{
+  padding-top: 33rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+.comment>.header>.left>image{
+width: 5rpx;
+height: 30rpx;
+}
+.comment>.header>.left>.num{
+  margin-left: 13rpx;
+  font-size:26rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(26,26,26,1);
+display: inline-block;
+}
+.comment>.header>.left>.num>text{
+  font-size:36rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(26,26,26,1);
+}
+.comment>.header>.right>text{
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  vertical-align: middle;
+}
+.comment>.header>.right>image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.comment>.commentList{
+  padding-top: 28rpx;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.comment>.commentList>.item{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 28rpx;
+  border-bottom: 1px solid rgba(240,240,240,1);
+}
+.comment>.commentList>.item>.avota{
+  width: auto;
+  height: 70rpx;
+  overflow: hidden;
+  position: relative;
+}
+.comment>.commentList>.item>.avota>image{
+  position: absolute;
+  width:66rpx;
+height:66rpx;
+border-radius:50%;
+top: 0;
+left: 0;
+}
+.comment>.commentList>.item>.avota>.name{
+  position: absolute;
+  top: 0;
+  left: 82rpx;
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(26,26,26,1);
+}
+.comment>.commentList>.item>.avota>.star{
+  position: absolute;
+  top: 35rpx;
+  left: 82rpx;
+ 
+
+}
+.comment>.commentList>.item>.avota>.star>image{
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 8rpx;
+}
+.comment>.commentList>.item>text{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(26,26,26,1);
+margin-top: 40rpx;
+display: block;
+}
+.comment>.commentList>.item>.imgArray{
+  margin-top: 16rpx;
+  overflow: auto;
+white-space: nowrap;
+height:190rpx ;
+padding-bottom: 20rpx;
+}
+.comment>.commentList>.item>.imgArray image{
+  width:190rpx;
+height:190rpx;
+border-radius:10rpx;
+float: left;
+margin-right: 19rpx;
+flex-wrap: nowrap;
+overflow: auto;
+}
+.commentList>button{
+  width:240rpx;
+height:68rpx;
+border:1px solid rgba(230,230,230,1);
+border-radius:34rpx;
+margin:0 auto;
+margin-top: 20rpx;
+/* padding-bottom: 40rpx; */
+font-size:28rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(26,26,26,1);
+line-height: 68rpx;
+margin-bottom: 40rpx;
+}
+.detail{
+  margin-top: 20rpx;
+  background-color: #fff;
+
+  box-sizing: border-box;
+}
+.detail>.header{
+  padding: 0 30rpx;
+ padding-top: 30rpx;
+ box-sizing: border-box;
+
+}
+.detail>.header>image{
+  width: 5rpx;
+  height: 30rpx;
+}
+.detail>.header>text{
+  font-size:36rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(26,26,26,1);
+margin-left: 12rpx;
+}
+.com>view>.WxEmojiView {
+ padding-left: 30rpx;
+}
+.com image{
+  width: 100%!important;
+}
+.foot{
+  width: 100%;
+  height: 98rpx;
+  background-color: #fff;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.foot>.left{
+  width: 28%;
+  height: 68rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.foot>.left>.dian{
+  width: 44rpx;
+  height: 100%;
+  margin-left: 30rpx;
+}
+.foot>.left>.dian>image{
+  
+width: 35rpx;
+height: 35rpx;
+display: block;
+}
+.foot>.left>.dian>text{
+  font-size:20rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(77,77,77,1);
+position: relative;
+top: -5rpx;
+}
+
+.foot>.left>.gou{
+  display: inline-block;
+
+  width: 75rpx;
+  height: 100%;
+  text-align: center;
+  position: relative;
+}
+.foot>.left>.gou>image{
+  
+  width: 35rpx;
+  height: 35rpx;
+  display: block;
+  margin: 0 auto;
+  }
+  .foot>.left>.gou>text{
+    font-size:20rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(77,77,77,1);
+  position: relative;
+  top: -5rpx;
+  }
+  .foot>.right{
+    width: 432rpx;
+    display: flex;
+    justify-content: space-between;
+  }
+  .foot>.right>.btn1{
+    width:216rpx;
+height:80rpx;
+background:rgba(64,64,64,1);
+border-radius:40rpx 0px 0px 40rpx;
+font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+  }
+  .foot>.right>.btn2{
+    width:216rpx;
+height:80rpx;
+background:linear-gradient(-25deg,rgba(255,56,59,1) 0%,rgba(255,166,76,1) 100%);
+border-radius:0px 40rpx 40rpx 0px;
+font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+  }
+
+
+.cu{
+  width: 100%;
+  height: 250%;
+  background-color: rgba(0,0,0,0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9999999999999999999;
+  overflow: hidden;
+}
+  .kuang{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: -20rpx;
+    background: #fff;
+    border-radius: 20rpx;
+    z-index: 99999999;
+    overflow: hidden;
+  }
+  .kuang>.kuangIn{
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+  height: 100%;
+  padding-bottom: 198rpx;
+  overflow: hidden;
+  }
+  .kuang>image{
+    width: 40rpx;
+    height: 40rpx;
+  position: absolute;
+  right: 0;
+  top: 30rpx;
+    border-radius: 20rpx;
+    margin-right: 50rpx;
+    z-index: 9999999999;
+  }
+  .kuangIn>.goods{
+    width: 100%;
+    height: 148rpx;
+  
+  }
+  
+  .kuangIn>.goods>.left{
+    width: 200rpx;
+    height: 200rpx;
+    float: left;
+    border-radius: 10rpx;
+    clear: both
+  }
+  .kuangIn>.goods>.right{
+    width: 424rpx;
+    height: 148rpx;
+    float: right;
+    padding-top: 70rpx;
+    box-sizing: border-box;
+   
+  }
+  .kuangIn>.goods>.right>.w1{
+  
+    display: block;
+    font-size: 34rpx;
+    color: rgba(245,49,49,1);
+  }
+  .kuangIn>.goods>.right>.w2{
+    display: block;
+    font-size: 26rpx;
+    color: rgb(204, 204, 204);
+    margin-top: 20rpx;
+  }
+  .kuangIn>.goods>.right>.w3{
+    display: block;
+    font-size: 28rpx;
+    color: rgb(0, 0, 0);
+  
+  
+  }
+  .kuangIn>.goods>.right>.w3>text{
+ 
+    font-size: 28rpx;
+    color: rgb(0, 0, 0);
+  }
+  .kuangIn>.goods>.left>image{
+    width: 100%;
+    height: 100%;
+       border-radius: 10rpx;
+  }
+  .kuangIn>.guige{
+    margin-top: 55rpx;
+    height: auto;
+    overflow: hidden;
+  }
+  .kuangIn>.guige>text{
+    display: block;
+    font-size: 28rpx;
+    font-weight:bold;
+  }
+  .kuangIn>.guige .nomal{
+    margin-top: 24rpx;
+    width:206rpx;
+    height:60rpx;
+ background:rgba(242,245,247,1);
+    border-radius:30rpx;
+    font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+float: left;
+text-align: center;
+line-height: 60rpx;
+margin-right: 10rpx;
+  }
+  .kuangIn>.guige .selected{
+    margin-top: 24rpx;
+ 
+    display: inline-block;
+    width:206rpx;
+    height:60rpx;
+    background:rgba(255,242,242,1);
+    border:1px solid rgba(255,76,79,1);
+    border-radius:30rpx;
+    font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,76,79,1);
+float: left;
+text-align: center;
+line-height: 60rpx;
+margin-right: 10rpx;
+  }
+  .kuangIn>.num1{
+    margin-top: 64rpx;
+  
+  }
+  .kuangIn>.num1>.left{
+    float: left;
+    font-size: 28rpx;
+    font-weight:bold;
+  }
+  .kuangIn>.num1>.right{
+     float: right;
+  }
+  .c-main{
+    display: inline-block;
+    width: 44rpx;
+    height: 44rpx;
+   margin-right: 10rpx;
+
+  }
+  .c-main>image{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .c-num{
+    display: inline-block;
+    width:88rpx;
+    height:44rpx;
+    background:rgba(242,245,247,1);
+    border-radius:10rpx;
+    text-align: center;
+    font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+vertical-align: middle;
+  }
+  .c-plus{
+      display: inline-block;
+    width: 44rpx;
+    height: 44rpx;
+    margin-left: 10rpx;
+  }
+  .c-plus>image{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .bom{
+    width: 100%;
+    position: absolute;
+    bottom: 20rpx;
+    height: 98rpx;
+    border-top: 1px solid rgba(240,240,240,1);
+    padding-top: 10rpx;
+    box-sizing: border-box;
+  
+  }
+  .bom>button{
+    width: 94%;
+    height:80rpx;
+    background:linear-gradient(-10deg,rgba(255,56,59,1) 0%,rgba(255,166,76,1) 100%);
+    border-radius:40rpx 40rpx 40rpx 40rpx;
+    margin: 0 auto;
+    font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+  
+  }
+  .tab{
+    width: 100%;
+    /* border-bottom: 2rpx solid #ccc; */
+  
+    height: 70rpx;
+  
+    padding: 20rpx 30rpx 20rpx 30rpx ;
+  box-sizing: border-box;
+  
+    position: fixed;
+    top: 130rpx;
+    left: 0;
+    background-color:rgb(255, 255, 255) ;
+    z-index: 99999999;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .swiper-tab-item{
+     /* width: auto; */
+     height: 70rpx;
+      color:#434343;
+      z-index: 999;
+     position: relative;
+   width: auto;
+   
+     overflow: hidden;
+     line-height: 60rpx;
+  
+  }
+
+  .swiper-tab-item>text{
+    font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+margin-bottom: 20rpx;
+  }
+  .active>.dibu{
+    margin: 0 auto;
+    width:60rpx;
+    height:6rpx;
+    background:linear-gradient(-10deg,rgba(255,56,59,1) 0%,rgba(255,166,76,1) 100%);
+    border-radius:3rpx 3rpx 3rpx 3rpx;
+  }
+  .active1{
+  background-color: #fff;
+  }
+
+ 
+wx-button[disabled]:not([type]) {
+
+    font-size:24rpx!important;
+    font-family:PingFang SC!important;
+    font-weight:500!important;
+    text-decoration:line-through!important;
+    color:rgba(179,179,179,1)!important;
+    
+    }

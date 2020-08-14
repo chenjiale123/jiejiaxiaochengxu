@@ -1,0 +1,198 @@
+<!--pagesSinger//pages/orderDetail/orderDetail.wxml-->
+<view class="contain">
+
+	<view class="top">
+		<image src="../../../image/imagebj@2x.png" class="bj"></image>
+		<image src="../../../image/fanhui1@2x.png" class="back" bindtap="back"></image>
+
+		<view class="status">
+			<view class="wallet">
+				<image src="../../../image/daifk@2x.png" wx:if="{{orderDetail.status==1}}"></image>
+				<image src="../../../image/yiqux1@2x.png" wx:if="{{orderDetail.status==8}}"></image>
+				<image src="../../../image/yiwanc1@2x.png" wx:if="{{orderDetail.status==7}}"></image>
+				<image src="../../../image/daiwuer@2x.png" wx:if="{{orderDetail.status==3}}"></image>
+				<image src="../../../image/daiqr1@2x.png" wx:if="{{orderDetail.status==2}}"></image>
+				<text wx:if="{{orderDetail.status==1}}">待付款</text>
+				<text wx:elif="{{orderDetail.status==2}}">待确认</text>
+				<text wx:elif="{{orderDetail.status==3}}">已确认</text>
+				<text wx:elif="{{orderDetail.status==4}}">已派工</text>
+				<text wx:elif="{{orderDetail.status==5}}">进行中</text>
+				<text wx:elif="{{orderDetail.status==6}}">已服务</text>
+				<text wx:elif="{{orderDetail.status==7}}">已完成</text>
+				<text wx:elif="{{orderDetail.status==8}}">已取消</text>
+				<text wx:elif="{{orderDetail.status==801}}">退款申请中</text>
+				<text wx:elif="{{orderDetail.status==802}}">退款中</text>
+				<text wx:elif="{{orderDetail.status==803}}">退款成功</text>
+
+
+			</view>
+			<view class="pay" wx:if="{{orderDetail.status==1}}">
+				<text >需付款：￥{{orderDetail.goodsPrice}}</text>
+				<text >{{rocallTime}}后自动取消订单</text>
+				<button bindtap="payCode">立即付款</button>
+			</view>
+			<view class="pay" wx:if="{{orderDetail.status==8||orderDetail.status==801||orderDetail.status==802||orderDetail.status==803}}">
+
+				<text >您此次订单已取消</text>
+				<text >欢迎您下次购买！</text>
+			</view>
+			<view class="pay" wx:if="{{orderDetail.status==7}}">
+
+				<text >您此次订单已完成</text>
+				<text >欢迎您下次购买！</text>
+			</view>
+			<view class="pay" wx:if="{{orderDetail.status==3}}">
+				<text >门店已确认订单</text>
+				<text >请耐心等待派工</text>
+			</view>
+			<view class="pay" wx:if="{{orderDetail.status==2}}">
+				<text >平台已收到您的订单，</text>
+				<text >请您耐心等待门店确认！</text>
+			</view>
+
+		</view>
+	</view>
+	<view class="content">
+		<view class="refoud" bindtap="refoudDetail" wx:if="{{orderDetail.status==801||orderDetail.status==802||orderDetail.status==803}}" data-item="{{orderDetail}}">
+			<view class="left">
+				<text>退款金额：{{orderDetail.orderPrice}}</text>
+			</view>
+			<view class="right">
+				<text wx:if="{{orderDetail.status==801}}">退款申请中</text>
+				<text wx:if="{{orderDetail.status==802}}">退款中</text>
+				<text wx:if="{{orderDetail.status==803}}">退款完成</text>
+
+				<image src="../../../image/hjinru1@2x.png"></image>
+			</view>
+		</view>
+	<view class="address">
+
+
+		<view class="left">
+			<image src="../../../image/dizhi1@2x.png"></image>
+
+		</view>
+		<view class="right">
+			<text>{{orderDetail.contactName}} {{orderDetail.contactNumber}}</text>
+
+			<text>地址：{{orderDetail.address}}</text>
+		</view>
+
+	</view>
+</view>
+	<view class="good">
+
+		<view class="store">
+			<view class="left">
+				<image src="../../../image/dp12@2x.png" class="dp"></image>
+				<text>{{orderDetail.storeName}}</text>
+				<image src="../../../image/jinru (1).png" class="icon"></image>
+
+			</view>
+			<view class="right">
+				<button>{{orderDetail.goodClassName}}</button>
+			</view>
+		</view>
+		<view class="list" wx:for="{{orderDetail.marketOrderGoodsList}}" wx:key="index">
+			<view class="left">
+				<image wx:if="{{item.goodsSpecImg}}" src="{{item.goodsSpecImg}}"></image>
+		<image wx:if="{{!item.goodsSpecImg}}" src="{{item.goodsImg}}"></image>
+			</view>
+			<view class="right">
+				<text class="txt">{{item.goodsName}}</text>
+				<view class="txt1"> <text wx:for="{{item.spc}}" wx:for-item="items"  wx:key="index">{{items.specValueName}}</text> </view>
+				<view class="price">￥{{item.goodsPrice}}<text> X{{item.goodsNumber}}</text> <button data-item="{{orderDetail}}" data-index="{{index}}" wx:if="{{item.Issale==true}}" bindtap="salesApply">申请售后</button></view>
+			</view>
+
+		</view>
+		<view class="info">
+			<view class="item">
+				<view class="left">
+					<text>门店电话:   {{orderDetail.storeContactPhone}}</text>
+
+				</view>
+
+				<view class="right" bindtap="dianhua">
+					<image src="../../../image/dianh11@2x.png"></image>
+					<text>拨打</text>
+				</view>
+
+			</view>
+
+			<view class="item">
+				<view class="left">
+					<text>门店地址:   {{orderDetail.storeAddress}}</text>
+
+				</view>
+
+				<view class="right" bindtap="daohang">
+					<image src="../../../image/daohang1@2x.png"></image>
+					<text>导航</text>
+				</view>
+
+			</view>
+		</view>
+
+		<view class="leave">
+			<view>
+				<text>服务时间:</text>
+				<text>{{orderDetail.serviceTimeStart}}-{{orderDetail.serviceTimeEnd}}</text>
+			</view>
+			<view>
+				<text>买家留言:</text>
+				<text>{{orderDetail.consumerMessage}}</text>
+			</view>
+
+		</view>
+
+	</view>
+
+
+	<view class="code">
+		<view class="order">
+			<view class="copy">
+
+				<text class="txt">订单编号：</text>
+				<text class="txt1">{{orderDetail.orderNumber}}</text>
+				<button bindtap="copy">复制</button>
+			</view>
+
+			<view class="copy">
+				<text class="txt" >创建时间：</text>
+				<text class="txt1">{{orderDetail.createTime}}</text>
+			</view>
+
+		</view>
+		<view class="money">
+			<text>商品总额：</text>
+			<text>￥{{orderDetail.goodsPrice}}</text>
+		</view>
+		<view class="money">
+			<text>服务费</text>
+			<text>￥{{orderDetail.servicePrice}}</text>
+		</view>
+		<view class="all">
+			需付款 <text>￥{{orderDetail.orderPrice}}</text>
+
+		</view>
+
+	</view>
+
+
+	<view class="btnList" wx:if="{{orderDetail.status==1}}">
+
+		<button bindtap="cancel" data-id="{{orderDetail.id}}">取消订单</button>
+		<button style="border:1px solid rgba(255,76,79,1);color:rgba(255,76,79,1)" bindtap="payCode">立即付款</button>
+
+	</view>
+	<view class="btnList" wx:if="{{orderDetail.status==7||orderDetail.status==8||orderDetail.status==801||orderDetail.status==802||orderDetail.status==803}}">
+		<button bindtap="again" data-item="{{orderDetail}}">再来一单</button>
+	</view>
+	<view class="btnList" wx:if="{{orderDetail.status==3}}">
+		<button bindtap="finish" data-id="{{orderDetail.id}}">订单完成</button>
+	</view>
+	<view class="btnList" wx:if="{{orderDetail.status==2}}">
+		<button bindtap="cancel" data-id="{{orderDetail.id}}">取消订单</button>
+	</view>
+	
+</view>

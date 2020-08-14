@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    
+    "pickerYMDHM": "../../component/pickerYMDHM/pickerYMDHM"
+  },
+  "navigationBarTitleText": "个人信息"
+}

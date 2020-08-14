@@ -1,0 +1,121 @@
+<!--index.wxml-->
+<view class="{{seath==false?'back':'front'}}">
+	<view class="top">
+		<view class="shop" hidden="{{seath==true}}" bindtap="localtion">
+			<image class="icon" src="../../image/dingwei.png"></image>
+			<text>{{address}}</text>
+			<image src="../../image/jinru.png" class="xiala"></image>
+		</view>
+		<view class="shop1" hidden="{{seath==false}}">
+			<input placeholder="搜索服务商品名称" placeholder-class="input" bindfocus="goodSearch">
+			<image src="../../image/sousuo.png"></image>
+			</input>
+		</view>
+	</view>
+</view>
+
+
+<view class="contain" bindtouchstart="touchStart" bindtouchend="touchEnd">
+	<view class="search">
+		<view class="seaIn">
+			<input placeholder="搜索服务商品名称" placeholder-class="input" bindfocus="goodSearch">
+			<image src="../../image/sousuo.png"></image>
+			</input>
+		</view>
+	</view>
+	<view class="tp">
+		<swiper class="lunbo" autoplay="true" interval="{{interval}}" duration="{{duration}}" bindchange="swiperChange">
+			<swiper-item wx:for="{{image}}" wx:key="index">
+				<image src='{{item.url}}'></image>
+			</swiper-item>
+		</swiper>
+		<view class="dots">
+			<block wx:for="{{image}}" wx:key="index">
+				<view class="dot{{index == swiperIdx ? ' active' : ''}}"></view>
+			</block>
+		</view>
+	</view>
+
+	<view class="tp1">
+		<swiper class="lunbo1" interval="{{interval}}" duration="{{duration}}" bindchange="swiperChange">
+			<block wx:for='{{newData}}' wx:key='{{index}}'>
+				<swiper-item>
+					<view class="iconList">
+						<view class="item" wx:for='{{item}}' wx:key="index" bindtap="skip1" data-index="{{index}}" data-id="{{item.id}}" data-type="{{item.moduleType}}">
+							<image src="{{item.icon}}"></image>
+							<text>{{item.name}}</text>
+						</view>
+
+					</view>
+
+				</swiper-item>
+				
+			</block>
+	
+
+		</swiper>
+		<!-- <view class="dots1">
+			<block wx:for="{{newData}}" wx:key="index">
+				<view class="dot{{index == swiperIdx ? ' active' : ''}}"></view>
+			</block>
+		</view> -->
+	</view>
+
+
+
+	<view class="goodList" wx:for="{{goodlist}}" wx:key="index">
+		<view class="title">
+			<view class="dian">
+				<image src="../../image/dian@2x.png"></image>
+				<text>{{item.cname}}</text>
+			</view>
+			<view bindtap="more1" data-id="{{item.cid}}" data-type="{{item.moduleType}}">
+				<text>更多</text>
+				<image src='../../image/jinru@2x.png'></image>
+			</view>
+		</view>
+
+		<view class="list">
+			<view class="item" wx:for="{{item.goods}}" bindtap="goodsDetail" data-id="{{item.id}}" wx:key="index" data-type="{{item.moduleType}}">
+				<image src="{{item.mainImg}}"></image>
+				<view class="classIn">
+					<text>{{item.name}}</text>
+
+					<view class="into">
+						<view>￥<text>{{item.price}}</text></view>
+
+					</view>
+				</view>
+
+			</view>
+		</view>
+
+
+
+
+
+	</view>
+
+	<view class="info">
+
+		<button bindtap="store">
+			<image src="../../image/dp12@2x.png"></image>
+			<text>{{address}} </text>
+			<image src='../../image/jinru@2x.png'></image>
+		</button>
+		<button catchtap='freeTell'>
+			<image src="../../image/dh11@2x.png"></image>
+			<text>{{phone}}</text>
+			<image src='../../image/jinru@2x.png'></image>
+		</button>
+
+	</view>
+
+	<view class="{{right==0? 'icon1':'icon2'}} " bindtap="shoppingcar">
+		<image src="../../image/gouwu01@2x.png"></image>
+		<text wx:if="{{cardTeams.length>0}}"></text>
+	</view>
+
+
+
+</view>

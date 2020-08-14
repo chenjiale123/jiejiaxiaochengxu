@@ -1,0 +1,75 @@
+/* pages/bill/bill.wxss */
+
+.contain{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background:rgba(242,245,247,1);
+  border-radius:30rpx 30rpx 0px 0px;
+}
+.contain>.item{
+
+}
+.contain>.item>text{
+  width: 100%;
+  height: 94rpx;
+  line-height: 94rpx;
+  display: block;
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+padding-left: 30rpx;
+box-sizing: border-box;
+}
+.contain>.item>.listItem{
+  background-color: #fff;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.contain>.item>.listItem>.list{
+  width: 100%;
+  height: 163rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+box-sizing: border-box;
+}
+.contain>.item>.listItem>.list>.left{
+  width: 60%;
+  height: auto;
+}
+.contain>.item>.listItem>.list>.left>image{
+  width: 96rpx;
+  height: 96rpx;
+}
+.contain>.item>.listItem>.list>.left>.txt{
+ 
+  margin-left: 22rpx;
+  display: inline-block;
+}
+.contain>.item>.listItem>.list>.left>.txt>text:nth-child(1){
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+display: block;
+}
+.contain>.item>.listItem>.list>.left>.txt>text:nth-child(2){
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+margin-top: 25rpx;
+}
+.contain>.item>.listItem>.list>.right>text{
+  font-size:34rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  /* color:rgba(51,51,51,1); */
+}
+.active{
+  color: rgb(247, 58, 58)!important;
+}

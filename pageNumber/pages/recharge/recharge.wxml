@@ -1,0 +1,15 @@
+<!--pagesSinger//pages/recharge/recharge.wxml-->
+<view class="contain">
+
+<view class="whole">
+<text>充值金额</text>
+
+<view class="input">
+<text>￥</text>
+<input bindinput="money" placeholder-class="place"></input>
+</view>
+<button bindtap="pay" hidden="{{hidden}}" class="btn">充值</button>
+<button bindtap="pay" hidden="{{!hidden}}" class="btn1">充值</button>
+</view>
+ 
+</view>

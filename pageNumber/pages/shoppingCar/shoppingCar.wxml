@@ -1,0 +1,241 @@
+<!--pages/shoppingCar/shoppingCar.wxml-->
+<view class="whole">
+
+	<view class="cu" wx:if="{{show3}}">
+		<view class="kuang">
+			<image src="../../../image/guanbi@2x.png" bindtap="close3"></image>
+			<view class="kuangIn">
+				<view class="goods">
+					<view class="left">
+						<image src="{{img1}}"></image>
+					</view>
+					<view class="right">
+						<text class="w1"  >￥{{price}} </text>
+
+						<text class="w2" wx:if="{{stock}}" > 库存：{{stock}}</text>
+						<view class="w3">已选： <text  wx:key="index">{{SpecV}}</text></view>
+					</view>
+				</view>
+
+				<view class="guige" wx:for="{{attributeList}}" wx:key="specName">
+					<text class="name">{{item.specName}}</text>
+					<view class="values">
+						<button disabled="{{vitem.checkStock==2}}" class="{{vitem.checked?'selected':'nomal'}}" bindtap="clickSkuValue" wx:for-item="vitem" wx:for="{{item.child}}" wx:key="id" data-value-id="{{vitem.specValueId}}" data-value-name="{{vitem.specValueName}}" data-value="{{item.specName}}" data-key="{{item.specId}}">
+							{{vitem.specValueName}}
+						</button>
+					</view>
+				</view>
+
+
+
+				<view class="num1">
+					<view class="left">购买数量</view>
+					<view class="right">
+						<view class='c-main' bindtap='getMain' data-index="{{index}}">
+							<image src='../../../image/jian@2x.png'></image>
+						</view>
+						<view class='c-num'>{{salesNum}}</view>
+						<view class='c-plus' bindtap='getPlus' data-index="{{index}}">
+							<image src='../../../image/jia@2x.png'></image>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="bom">
+
+				<button bindtap="dingdan">确定</button>
+
+			</view>
+		</view>
+	</view>
+
+
+
+	<view class="edit">
+
+		<view class="zhezao" wx:if="{{hidden}}">
+			<view class="storeItem">
+				<!-- lieb -->
+				<view class="Item" wx:for="{{list}}" wx:key="index" data-id="{{item}}" bindtap="select">
+					<image src="../../../image/duigou@2x.png" wx:if="{{item.isCurrent==0}}"></image>
+					<text>{{item.name}}</text>
+				</view>
+				<!-- <view class="Item">
+
+			<text>南昌广州路金域华府旗舰店</text>
+		 </view> -->
+			</view>
+		</view>
+
+
+		<view class="storeList">
+			<image src="../../../image/dp12@2x.png" class="logo"></image>
+			<text>{{storename}}</text>
+			<image src="../../../image/xiala@2x.png" class="xiala" bindtap="dixed"></image>
+		</view>
+		<text bindtap="change" wx:if="{{show}}">编辑</text>
+		<text bindtap="change1" wx:if="{{!show}}" >完成</text>
+
+	</view>
+
+
+
+	<view class='cartallview'>
+    <view class="cart-box" hidden="{{cardTeams.length>0}}">
+		 
+		 <image src="../../../image/wushpin@2x.png"></image>
+		
+		</view>
+		<view class="cart-box" wx:for="{{cardTeams}}" wx:key="index" wx:for-index="idx" wx:for-item="vitem" hidden="{{cardTeams.length==0}}">
+
+			<!-- wx:for 购物车信息列表 头部商家名称 -->
+
+			<view class="center">
+
+				<view class='storehed'>
+
+					<icon wx:if='{{vitem.type!=="失效商品"}}' type="{{vitem.selected ? 'success':'circle'}}" bindtap="storeselected" data-index="{{idx}}" color="#FFA54C" style="background-color:none" />
+					<image src="{{vitem.hotIcon}}"></image>
+					<text>{{vitem.type}}</text><text wx:if='{{vitem.type=="失效商品"}}'>({{blur.length}})</text>
+					<button wx:if='{{vitem.type=="失效商品"}}' bindtap="clear" data-ids="{{blur}}">全部清除</button>
+				</view>
+
+
+
+				<view>
+
+					<!-- 商品组键 -->
+					<view class='shopgoodlist1' wx:for="{{vitem.goodsList}}" wx:key="index" wx:if='{{vitem.type=="失效商品"}}'>
+
+
+						<icon wx:if='{{vitem.type!=="失效商品"}}' type="{{item.selected ? 'success':'circle'}}" color="#FFA54C" bindtap="goodsselected" data-index="{{index}}" data-select-index="{{idx}}" />
+						<view class="icon"></view>
+
+						<view class="img">
+							<image class="cart-thumb" src="{{item.mainImg}}" class="main"></image>
+							<image src="../../../image/shixiao@2x.png" class="image"></image>
+						</view>
+						<view class='goodsdata1'>
+
+							<text class='goodsname'>{{item.goodsName}}</text>
+
+
+
+							<view class="foot">
+
+								<text wx:if="{{item.goodsStatus==3}}">商品已下架</text>
+								<text wx:if="{{item.goodsStatus==4}}">商品库存不足</text>
+								<text wx:if="{{item.goodsStatus==5}}">商品被删除</text>
+								<button bindtap="searchClass" data-item="{{item}}">搜索同类</button>
+
+
+							</view>
+						</view>
+
+					</view>
+
+					<view class='shopgoodlist' wx:for="{{vitem.goodsList}}" wx:key="index" wx:if='{{vitem.type!=="失效商品"}}'>
+						<view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" data-index1="{{idx}}" style="{{item.shows}}" class="list_del txt">
+
+							<!-- wx:if 是否选择显示不同图标 -->
+
+							<view wx:if="{{item.goodsStatus==2}}" class="{{!show? 'yin':'jin'}}"></view>
+							<icon type="{{item.selected ? 'success':'circle'}}" class="{{item.goodsStatus==2?'hight':'might'}}" color="#FFA54C" bindtap="goodsselected" data-index="{{index}}" data-select-index="{{idx}}" />
+
+							<!-- 点击商品图片可跳转到商品详情 -->
+                <image class="cart-thumb" src="{{item.img}}" wx:if="{{item.img!==''}}"></image>
+							<image class="cart-thumb" src="{{item.mainImg}}" wx:if="{{item.img==''}}"></image>
+
+							<view class='goodsdata' hidden="{{item.goodsStatus==2}}">
+
+								<text class='goodsname'>{{item.goodsName}}</text>
+
+								<view class='specification' wx:if="{{item.specValue!==''}}" bindtap="spcShow" data-id="{{item.goodsInfoId}}" data-num="{{item.num}}" data-goodsDetail="{{item}}" data-specId="{{item.specId}}" data-value="{{item.specValue}}"> <text>{{item.specValue}}</text>
+									<image src="../../../image/xiala@2x.png"></image>
+								</view>
+
+								<view class="foot">
+
+									<view class='price'>￥ <text>{{item.price}}</text> </view>
+
+									<!-- 增加减少数量按钮 -->
+
+									<view class='goodsnum'>
+
+										<image bindtap="minusCount" data-detail="{{item.goodsDetailId}}" data-index="{{index}}" data-select-index="{{idx}}" bindtap='minusCount' src="../../../image/jian@2x.png"></image>
+
+										<input value="{{item.num}}" data-detail="{{item.goodsDetailId}}" data-index="{{index}}" data-index1="{{idx}}" bindblur="changenum" data-stock="{{item.stock}}" ></input>
+
+										<image bindtap="addCount" data-detail="{{item.goodsDetailId}}" data-index="{{index}}" data-select-index="{{idx}}" bindtap='addCount' src="../../../image/jia@2x.png"> </image>
+
+									</view>
+								</view>
+							</view>
+							<view class='goodsdata' hidden="{{item.goodsStatus==1}}" bindtap="spcAgain" data-id="{{item.goodsInfoId}}" data-num="{{item.num}}" data-goodsDetail="{{item}}" data-specId="{{item.specId}}" data-value="{{item.specValue}}">
+
+								<text class='goodsname'>{{item.goodsName}}</text>
+
+
+
+								<view class="foot1">
+
+									<view class="guige1">
+
+										<image src="../../../image/tishi@2x.png"></image>
+										<text>请重新选择其他规格</text>
+									</view>
+									<view class="btn">
+										<button>重选</button>
+									</view>
+
+
+								</view>
+							</view>
+
+						</view>
+						<!-- 删除 -->
+						<view data-id="{{item.id}}" data-index="{{index}}" bindtap="delItem" data-index="{{index}}" data-index1="{{idx}}" class="list_del del">删除</view>
+					</view>
+
+
+
+
+				</view>
+			</view>
+			<view class="allPrice" wx:if='{{vitem.type!=="失效商品"}}'>
+				<view class="left">
+					<text>合计：</text>
+					<text>￥{{vitem.total}}</text>
+					<text>不含服务费</text>
+
+				</view>
+				<view class="right">
+					<button bindtap="order" data-id="{{vitem.moduleType}}" data-classId="{{vitem.parentClassId}}"   hover-class="none">去下单</button>
+
+				</view>
+
+			</view>
+		</view>
+
+	</view>
+
+	<!-- 合计 提交订单 -->
+
+	<view class='allselected' wx:if="{{hidden1}}">
+
+		<view>
+
+			<icon type="{{allselected ? 'success':'circle'}}" color="#FFA54C" bindtap="tapallallprices" />
+
+			<text>全选</text>
+
+		</view>
+
+		<view>
+
+			<button bindtap="deleteList"   hover-class="none">删除</button>
+
+		</view>
+
+	</view>
+</view>

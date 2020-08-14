@@ -1,0 +1,45 @@
+<!--pages/localtion/localtion.wxml-->
+<view class="contain">
+
+	<view class="top">
+
+		<view class="left" bindtap="selectCity">
+
+		
+			<text>{{address}}</text>
+			<image src="../../../image/xiala@2x.png"></image>
+		</view>
+		<view class="right">
+			<input placeholder="搜索门店信息" placeholder-class="input" bindinput="searchStore">
+			<image src="../../../image/sousuo@2x.png"></image>
+			</input>
+		</view>
+	</view>
+
+    <view class="remain">
+			<image src="../../../image/tishi@2x.png"></image>
+			<text>{{remain}}</text>
+			</view>
+	<view class="address">
+  
+		<view class="item" wx:for="{{array}}" wx:key="index" data-id="{{item.id}}"  data-item="{{item}}" bindtap="select" data-name="{{item.name}}" data-local="{{item.longitude}},{{item.latitude}}">
+			  <image wx:if="{{index == 0 ? true : false}}"   src="../../../image/qjd01@2x.png"></image>
+        <image wx:else="{{index == 0 ? 'contentShow' : 'contentHiden'}}"   src="../../../image/qjd@2x.png"></image>
+			<view class="center">
+				<view class="title">
+	    <text wx:if="{{index == 0 ? true : false}}" class="etc">{{item.name}}</text>
+       <text wx:else >{{item.name}}</text>
+				  <!-- <image wx:if="{{index == 0 ? true : false}}"   src="../../../image/dq01.png"></image> -->
+  
+				</view>
+				<text>{{item.address}}</text>
+			</view>
+      <text>{{item.distance}}</text>
+		</view>
+
+	</view>
+
+	    <view hidden="{{array!==null}}" class="address">
+    <image src="../../../image/souwu@2x.png"></image>
+    </view>
+</view>

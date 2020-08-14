@@ -1,0 +1,67 @@
+/* pagesSinger//pages/paySuccess/paySuccess.wxss */
+.contain{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  overflow: hidden;
+}
+.contain>image{
+  width: 44rpx;
+  height: 44rpx;
+  margin-left: 32rpx;
+  margin-top: 62rpx;
+}
+.contain>.main{
+text-align: center;
+overflow: hidden;
+height: auto;
+}
+.contain>.main>.result{
+  margin-top: 34rpx;
+  text-align: center;
+}
+.contain>.main>.result>image{
+  width: 172rpx;
+  height: 154rpx;
+  display: block;
+  margin: 0 auto;
+}
+.contain>.main>.result>.txt{
+  font-size:36rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(26,26,26,1);
+margin-top: 27rpx;
+display: block;
+}
+.contain>.main>.result>.txt1{
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(102,102,102,1);
+margin-top: 12rpx;
+display: block;
+}
+.contain>.main>.btn{
+  margin-top: 188rpx;
+  text-align: center;
+}
+.contain>.main>.btn>text{
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(26,26,26,1);
+display: block;
+}
+.contain>.main>.btn>button{
+  width:406rpx;
+height:80rpx;
+background:linear-gradient(-10deg,rgba(255,56,59,1) 0%,rgba(255,166,76,1) 100%);
+border-radius:40rpx 40rpx 40rpx 40rpx;
+font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+display: block;
+margin: 0 auto;
+}

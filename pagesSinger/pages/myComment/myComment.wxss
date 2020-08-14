@@ -1,0 +1,268 @@
+/* pages/myComment/myComment.wxss */
+/* pages/mine/mine.wxss */
+.show{
+  display: block;
+}
+.hidden{
+  display: none;
+}
+.contain{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: #fff;
+}
+.sroll{
+  width: 100%;
+  height: 94rpx;
+  background-color: #fff;
+}
+.swiper-tab{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.swiper-tab-item {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}
+.swiper-tab-item >text{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(102,102,102,1);
+}
+.swiper-tab-item >.dibu{
+
+}
+.active>text{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(26,26,26,1);
+}
+.active>.dibu{
+  width:72rpx;
+height:6rpx;
+background:linear-gradient(-30deg,rgba(255,56,59,1) 0%,rgba(255,166,76,1) 100%);
+border-radius:3rpx 3rpx 3rpx 3rpx;
+margin: 0 auto;
+}
+.hopeList{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background:rgba(242,245,247,1);
+border-radius:30rpx 30rpx 0px 0px;
+padding: 50rpx 30rpx;
+box-sizing: border-box;
+}
+.item{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+
+}
+.item>.top>image{
+width: 38rpx;
+height: 38rpx;
+vertical-align: middle;
+}
+.item>.top>text{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(102,102,102,1);
+vertical-align: middle;
+}
+.goods{
+  width: 100%;
+  height: 238rpx;
+  background-color: #fff;
+ 
+border-radius:20rpx;
+margin-top: 30rpx;
+padding: 24rpx;
+box-sizing: border-box;
+display: flex;
+justify-content: space-between;
+}
+.goods>.left{
+  width:30% ;
+  height: 190rpx;
+}
+.goods>.left>image{
+  width: 190rpx;
+  height: 190rpx;
+}
+.goods>.right{
+  width: 65%;
+  height: 190rpx;
+  overflow: hidden;
+  position: relative;
+}
+.goods>.right>.title{
+  width: 100%;
+  display: block;
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(26,26,26,1);
+text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+}
+.goods>.right>.spec{
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+margin-top: 25rpx;
+}
+.goods>.right>button{
+ position: absolute;
+ bottom: 0;
+ right: 0;
+ width:124rpx;
+height:48rpx;
+border:1px solid rgba(255,76,79,1);
+border-radius:24rpx;
+font-size:22rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,76,79,1);
+}
+
+
+.goodsReman{
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+ 
+border-radius:20rpx;
+margin-top: 30rpx;
+padding: 24rpx;
+box-sizing: border-box;
+
+}
+.goodsReman>.head{
+  width: 100%;
+  height: auto;
+  display: flex;
+justify-content: space-between;
+overflow: hidden;
+}
+.goodsReman>.head>.left{
+  width:30% ;
+  height: 190rpx;
+}
+.goodsReman>.head>.left>image{
+  width: 190rpx;
+  height: 190rpx;
+}
+.goodsReman>.head>.right{
+  width: 65%;
+  height: 190rpx;
+  overflow: hidden;
+  position: relative;
+}
+.goodsReman>.head>.right>.title{
+  width: 100%;
+  display: block;
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(26,26,26,1);
+text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+}
+.goodsReman>.head>.right>.spec{
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+margin-top: 25rpx;
+}
+.goodsReman>.head>.right>.scroe{
+margin-top: 30rpx;
+
+}
+.goodsReman>.head>.right>.scroe>text{
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.goodsReman>.head>.right>.scroe>.star{
+  display: inline-block;
+}
+.goodsReman>.head>.right>.scroe>.star>image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 8rpx;
+}
+.goodsReman>image{
+  width: 100%;
+  height: 10rpx;
+  margin-top: 21rpx;
+}
+.goodsReman>.comment{
+  margin-top: 21rpx;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.goodsReman>.comment>text{
+  font-size:26rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(102,102,102,1);
+}
+.goodsReman>.comment>.imgArray{
+  margin-top: 16rpx;
+  overflow: auto;
+white-space: nowrap;
+height:190rpx ;
+padding-bottom: 20rpx;
+}
+.goodsReman>.comment>.imgArray image{
+  width:190rpx;
+height:190rpx;
+border-radius:10rpx;
+float: left;
+margin-right: 19rpx;
+flex-wrap: nowrap;
+overflow: auto;
+}
+.goodsReman>.comment>.start{
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.goodsReman>.comment>.start>.zuo>image{
+  width: 24rpx;
+  height: 24rpx;
+}
+.goodsReman>.comment>.start>.zuo>text{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(179,179,179,1);
+}
+.goodsReman>.comment>.start>.you>button{
+  width:124rpx;
+  height:48rpx;
+  border:1px solid rgba(255,76,79,1);
+  border-radius:24rpx;
+  font-size:22rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,76,79,1);
+}
+
+
+

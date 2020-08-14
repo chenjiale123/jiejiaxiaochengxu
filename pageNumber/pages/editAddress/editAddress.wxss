@@ -1,0 +1,164 @@
+/* pages/addAddress/addAddress.wxss */
+.contain{
+  width: 100%;
+  height: 100%;
+}
+
+.item{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  height: 107rpx;
+  align-items: center;
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.item>text{
+  font-size:30rpx;
+  font-family:Microsoft YaHei;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+
+.item>.input{
+  width: 80%;
+  height: 50rpx;
+
+}
+.item>.Input{
+  width: 62%;
+  height: 50rpx;
+
+}
+.inputClass{
+  font-size:30rpx;
+font-family:Microsoft YaHei;
+font-weight:400;
+color:rgba(179,179,179,1);
+}
+.local{
+  vertical-align: middle;
+}
+.local>image{
+width: 40rpx;
+height: 40rpx;
+vertical-align: middle;
+}
+.local>text{
+  font-size:28rpx;
+font-family:Microsoft YaHei;
+font-weight:400;
+color:rgba(51,51,51,1);
+vertical-align: middle;
+}
+.nameInput{
+  width: 40%;
+  height: 50rpx;
+}
+.radio-group{
+width: 35%;
+display: flex;
+justify-content: space-between;
+}
+.radio-group text{
+  font-size:28rpx;
+font-family:Microsoft YaHei;
+font-weight:400;
+color:rgba(51,51,51,1);
+}
+
+ 
+ 
+/*radio未选中时样式 */
+radio .wx-radio-input{ 
+ /* 自定义样式.... */
+
+  height: 32rpx; 
+  width: 32rpx;
+  margin-top: -4rpx;
+  border-radius: 50%;
+  border: 2rpx solid #999;
+  background: transparent;
+  
+ 
+ }
+ 
+ 
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked {
+
+  border-color: #FF383B!important;
+  background: #fff;
+   
+}
+ 
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before {
+ /* 去除对号 */
+ content: ''; 
+ background: #FF383B;
+ width: 36rpx;
+ height: 36rpx;
+ border-radius: 50%;
+
+  
+}
+.default{
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35rpx;
+}
+.left{
+  width: 80%;
+  height: auto;
+  overflow: hidden;
+}
+.left>text:nth-child(1){
+  font-size:30rpx;
+font-family:Microsoft YaHei;
+font-weight:400;
+color:rgba(51,51,51,1);
+display: block;
+}
+.left>text:nth-child(2){
+  font-size:24rpx;
+font-family:Microsoft YaHei;
+font-weight:400;
+color:rgba(153,153,153,1);
+display: block;
+margin-top: 18rpx;
+}
+.right{
+  width: 20%;
+  height: 100%;
+
+}
+switch{
+  float: right;
+}
+.wx-switch-input{
+ zoom: 0.7;
+ 
+}
+button{
+
+
+
+    width:80%;
+height:98rpx;
+background:linear-gradient(-10deg,rgba(255,56,59,1) 0%,rgba(255,166,76,1) 100%);
+border-radius:49px;
+margin:0 auto;
+ text-align: center;
+ line-height: 98rpx;
+ font-size:28rpx;
+font-family:Microsoft YaHei;
+font-weight:400;
+color:rgba(255,255,255,1);
+margin-top: 100rpx;
+}
+

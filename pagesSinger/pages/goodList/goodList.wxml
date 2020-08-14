@@ -1,0 +1,65 @@
+<!--pages/goodList/goodList.wxml-->
+<view class="contain">
+
+	<view class="top">
+		<view class="logo">
+			<view class="left" bindtap="back">
+				<image src="../../../image/fanhui@2x.png"></image>
+			</view>
+			<view class="right">
+				<image src="../../../image/gengduo.png"></image>
+			</view>
+		</view>
+		<view class="search">
+			<input placeholder="搜索服务商品名称" placeholder-class="input">
+			<image src="../../../image/sousuo@2x.png"></image>
+			</input>
+		</view>
+	</view>
+
+<view class="sroll">
+	<scroll-view  class="swiper-tab"  scroll-x="true" scroll-x>
+		<view  class="swiper-tab-item {{currentTab==item.id?'active':''}}" data-current="{{index}}"  bindtap="clickTab" wx:for="{{tree}}" wx:key="index" data-id="{{item.id}}">
+			<image src="{{currentTab==item.id ?  item.hotIcon : item.unSelectIcon}} "></image>
+			<text>{{item.name}}</text>
+			<view class="dibu"></view>
+		</view>
+
+		<view class="yy" bindtap="more">
+			<image src="../../../image/yinying@2x.png"></image>
+			<view class="more">
+				<image src="../../../image/gengduo11@2x.png"></image>
+			</view>
+		</view>
+	</scroll-view >
+
+</view>
+	<view class="{{currentTab == item.id ? 'show':'hidden'}}" wx:for="{{tree}}" wx:key="index" style="overflow:auto;width:100%">
+
+		<scroll-view class="swiper-tab1" style="overflow:auto;white-space: nowrap;"  scroll-x >
+			<view   class="swiper-tab-item1 {{tab==item.id?'active1':''}}" data-current="{{index}}" bindtap="click" wx:for="{{item.subclass}}" wx:key="index" data-id="{{item.id}}">{{item.name}}</view>
+
+		</scroll-view>
+		<view >
+			<scroll-view class="content" wx:if="{{goodlist.length>0}}">
+				<view class="item" wx:for="{{goodlist}}"  wx:key="index" bindtap="detail" data-id="{{item.id}}"  data-type="{{item.moduleType}}">
+					<image src="{{item.mainImg}}"></image>
+					<view class="goods">
+						<text class="title">{{item.name}}</text>
+						<text class="into">{{item.title}}</text>
+						<view class="price"> ￥<text>{{item.price}}</text></view>
+					</view>
+
+				</view>
+     
+			</scroll-view>
+
+			   <view  class="content" wx:if="{{goodlist.length==0}}">
+				 <image src="../../../image/wushpin@2x.png"></image>
+				
+				</view>
+		</view>
+
+	</view>
+
+</view>

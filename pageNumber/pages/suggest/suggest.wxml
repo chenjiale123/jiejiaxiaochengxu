@@ -1,0 +1,17 @@
+<!--pages/suggest/suggest.wxml-->
+<view class="contain">
+
+	<view>
+
+		<text>我们产品还有许多需要改进的地方，您的反馈和建议对我们非常重要，欢迎您对我们的产品功能或有问题的地方提出反馈和建议，以便我们尽快改进产品和服务！</text>
+
+
+		<view class="text">
+
+			<textarea placeholder="请输入您的反馈意见和建议" placeholder-class="sug" bindtap="sugg"></textarea>
+			<image src="../../../image/bianji1@2x.png"></image>
+		</view>
+	</view>
+
+	<button   hover-class="none" bindtap="sub">提交</button>
+</view>

@@ -1,0 +1,11 @@
+{ 
+  "usingComponents": {
+  "uploadImages": "/component/uploadImages/index"
+  
+},
+
+
+"navigationBarTitleText": "申请售后",
+"navigationBarBackgroundColor":"#F2F5F7"
+  
+}

@@ -1,0 +1,198 @@
+<!--pages/goodsDetail/goodsDetail.wxml-->
+<view class="contain">
+
+	<view class="cu" wx:if="{{show3}}" catchtouchmove="ture">
+		<view class="kuang">
+			<image src="../../../image/guanbi@2x.png" bindtap="close3"></image>
+			<view class="kuangIn">
+				<view class="goods">
+					<view class="left">
+						<image src="{{img1}}"></image>
+					</view>
+					<view class="right">
+						<text class="w1"  wx:if="{{stock!==''}}">￥{{price}} </text>
+						<text class="w1" wx:else="{{stock==''}}">￥{{price}} 起</text>
+						<text class="w2" wx:if="{{stock!==''}}"> 库存：{{stock}}</text>
+						<view class="w3" wx:if="{{SpecV.length>0}}">已选： <text  wx:key="index">{{SpecV}}</text></view>
+					</view>
+				</view>
+
+				<view class="guige" wx:for="{{attributeList}}" wx:key="specName">
+					<text class="name">{{item.specName}}</text>
+					<view class="values">
+						<button disabled="{{vitem.checkStock==2}}" class="{{vitem.checked?'selected':'nomal'}}" bindtap="clickSkuValue" wx:for-item="vitem" wx:for="{{item.child}}" wx:key="id" data-value-id="{{vitem.specValueId}}" data-value-name="{{vitem.specValueName}}" data-value="{{item.specName}}" data-key="{{item.specId}}">
+							{{vitem.specValueName}}
+						</button>
+					</view>
+				</view>
+
+
+
+				<view class="num1">
+					<view class="left">购买数量</view>
+					<view class="right">
+						<view class='c-main' bindtap='getMain' data-index="{{index}}">
+							<image src='../../../image/jian@2x.png'></image>
+						</view>
+						<input class='c-num' value="{{salesNum}}" bindblur="changenum"></input>
+						<view class='c-plus' bindtap='getPlus' data-index="{{index}}">
+							<image src='../../../image/jia@2x.png'></image>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="bom">
+				<button bindtap="addShopCar" wx:if="{{status==2}}"   hover-class="none">加入购物车</button>
+				<button bindtap="dingdan" wx:if="{{status==1}}"   hover-class="none">立即购买</button>
+			</view>
+		</view>
+	</view>
+
+
+
+	<view class="main {{hidden==true?'active1':''}}">
+		<view class="logo" bindtap="back">
+			<view class="left">
+				<image src="../../../image/fanhui@2x.png"></image>
+			</view>
+			<view class="right">
+				<image src="../../../image/gengduo.png"></image>
+			</view>
+		</view>
+	</view>
+	<view class="tab" hidden="{{!hidden}}">
+		<view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" data-scroll="{{item.scroll}}" wx:for="{{tree}}" wx:key="index">
+
+			<text>{{item.name}}</text>
+			<view class="dibu"></view>
+		</view>
+
+	</view>
+	<view class='lunbo'>
+		<image src="../../../image/zhezhao@2x.png"></image>
+
+		<swiper autoplay="true">
+			<swiper-item wx:for="{{img}}" wx:key="index">
+
+				<image src='{{item}}'></image>
+				<view class='num'>
+					<image src="../../../image/tupian@2x.png"></image>
+					<text>{{index+1}}/{{img.length}}</text>
+				</view>
+			</swiper-item>
+		</swiper>
+	</view>
+
+
+
+	<view class="content">
+		<view class="product">
+			<view class="title">
+				<view class="price">
+					<text>￥</text>
+					<text>{{goodDetails.price}}</text>
+
+					<text>起</text>
+				</view>
+				<view class="sale">
+					<text>已售{{goodDetails.saleNumber}}单</text>
+				</view>
+
+			</view>
+			<text class="head">{{goodDetails.name}}</text>
+			<text class="into">{{goodDetails.title}}</text>
+		</view>
+		<view class="spec" bindtap="spcShow" wx:if="{{attributeList.length>0}}">
+			<view class="left">
+				<text>请选择</text>
+				<text>{{SpecV}}</text>
+			</view>
+			<view class="right">
+				<image src="../../../image/jinru@2x.png"></image>
+			</view>
+		</view>
+		<view class="comment">
+			<view class="header" wx:if="{{commentList.length>0}}">
+				<view class="left">
+					<image src="../../../image/biaoti@2x.png"></image>
+					<view class="num" >
+						<text>评价</text>
+						({{commentList.length}})
+					</view>
+				</view>
+				<view class="right">
+					<text>好评度{{commentAll.goodRate}}</text>
+					<image src="../../../image/jinru@2x.png"></image>
+
+				</view>
+
+			</view>
+      	<view class="header" wx:if="{{commentList.length==0}}">
+				<view class="left">
+					<image src="../../../image/biaoti@2x.png"></image>
+			
+					<view class="num" >
+			    	<text> 暂无评价	</text>
+						</view>
+				</view>
+	
+
+			</view>
+			<view class="commentList">
+				<view class="item" wx:for="{{commentList}}" wx:key="index">
+					<view class="avota">
+						<image src="{{item.avatarUrl}}"></image>
+						<text class="name">{{item.username}}</text>
+						<view class="star">
+							<image src="../../../image/xing01@2x.png" wx:for="{{item.score}}"></image>
+
+						</view>
+					</view>
+					<text>{{item.content}}</text>
+					<scroll-view scroll-x class="imgArray" wx:if="{{item.enclosureUrl}}">
+						<image src="{{item}}" wx:for="{{arrcom}}" bindtap='previewImg' data-src="{{item}}"></image>
+					</scroll-view>
+				</view>
+
+				<button bindtap="findAll" wx:if="{{commentList.length>0}}">查看全部评价</button>
+			</view>
+
+		</view>
+		<view class="detail">
+			<view class="header">
+				<image src="../../../image/biaoti@2x.png"></image>
+				<text>图文详情</text>
+			</view>
+			<view class="com">
+				<!-- 图文详情 -->
+				<import src="../../../wxParse/wxParse.wxml" />
+				<template is="wxParse" data="{{wxParseData:article.nodes}}" />
+			</view>
+
+
+		</view>
+	</view>
+
+	<view class="foot">
+
+		<view class="left">
+			<view class="dian" bindtap="store">
+				<image src="../../../image/mendian@2x.png"></image>
+				<text class="text">门店</text>
+			</view>
+
+
+			<view class="gou" bindtap="shopcar">
+				<view class="number" wx:if="{{cardTeams.length>0}}"></view>
+				<image src="../../../image/gouwu01@2x.png"></image>
+				<text class="text">购物车</text>
+			</view>
+		</view>
+		<view class="right">
+			<button class="btn1" bindtap="addCar">加入购物车</button>
+			<button class="btn2"  bindtap="buy">立即购买</button>
+		</view>
+	</view>
+
+
+</view>

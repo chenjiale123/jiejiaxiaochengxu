@@ -1,0 +1,103 @@
+<!--pages/shopCar/shopCar.wxml-->
+<view class="contain">
+
+	<view class="information">
+
+		<view class="item" bindtap="changeAvatar">
+			<view class="left">
+				<text>头像</text>
+
+			</view>
+			<view class="right">
+				<image src="{{userDetail.avatarUrl}}" class="avtor"></image>
+				<image src="../../../image/jinru12@2x.png" class="icon"></image>
+			</view>
+		</view>
+
+
+		<view class="item" bindtap="nickName">
+			<view class="left">
+				<text>昵称</text>
+
+			</view>
+			<view class="right">
+				<text>{{userDetail.username}}</text>
+				<image src="../../../image/jinru12@2x.png" class="icon"></image>
+			</view>
+		</view>
+
+		<view class="item" bindtap="phone">
+			<view class="left">
+				<text>手机号</text>
+
+			</view>
+			<view class="right">
+				<text>{{userDetail.mobilePhone}}</text>
+				<image src="../../../image/jinru12@2x.png" class="icon"></image>
+
+			</view>
+		</view>
+
+		<view class="item" bindtap="sexName">
+			<view class="left">
+				<text>性别</text>
+			</view>
+			<view class="right">
+				<text wx:if="{{userDetail.gender=='1'}}">男</text>
+						<text wx:else>女</text>
+				<image src="../../../image/jinru12@2x.png" class="icon"></image>
+			</view>
+		</view>
+
+		<view class="item">
+			<view class="left">
+				<text>出生日期</text>
+
+			</view>
+			<view class="right">
+
+
+				<pickerYMDHM placeholder="{{userDetail.dob}}" date="{{date}}" disabled="{{disabled}}" bind:onPickerChange="onPickerChange" startDate="{{startDate}}" endDate="{{endDate}}">
+				</pickerYMDHM>
+
+
+
+			</view>
+		</view>
+	</view>
+
+
+	<view class="nick" wx:if="{{hidden}}">
+		<view class="nickname">
+			<view class="top">
+				<text bindtap="cancel">取消</text>
+				<text>修改昵称</text>
+				<text bindtap="sure">确定</text>
+			</view>
+			<view class="bottom">
+				<input bindinput="name"></input>
+				<text>4-20个字符，可由中英文、数字、“_”、“-”组成</text>
+			</view>
+
+		</view>
+	</view>
+
+	<view class="sex" wx:if="{{hidden1}}">
+		<view class="sexname">
+			<view bindtap="boy">
+				<image src="../../../image/boy@2x.png"></image>
+				<text>男</text>
+			</view>
+			<view bindtap="girl">
+				<image src="../../../image/girl@2x.png"></image>
+				<text>女</text>
+			</view>
+			<view>
+
+				<text bindtap="cancel1">取消</text>
+			</view>
+
+		</view>
+
+	</view>
+</view>

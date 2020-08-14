@@ -1,0 +1,101 @@
+<!--pagesSinger//pages/refoundApply/refoundApply.wxml-->
+<view class="contain">
+
+	<view class="goods">
+		<view class="title">
+			<view class="left">
+				<image src="../../../image/dp12@2x.png"></image>
+				<text>{{salesDetail.storeName}}</text>
+				<button>{{salesDetail.goodClassName}}</button>
+
+			</view>
+
+			<view class="right">
+						<text wx:if="{{salesDetail.status==1}}">待付款</text>
+				<text wx:elif="{{salesDetail.status==2}}">待确认</text>
+				<text wx:elif="{{salesDetail.status==3}}">已确认</text>
+				<text wx:elif="{{salesDetail.status==4}}">已派工</text>
+				<text wx:elif="{{salesDetail.status==5}}">进行中</text>
+				<text wx:elif="{{salesDetail.status==6}}">已服务</text>
+				<text wx:elif="{{salesDetail.status==7}}">已完成</text>
+				<text wx:elif="{{salesDetail.status==8}}">已取消</text>
+				<text wx:elif="{{salesDetail.status==801}}">退款申请中</text>
+				<text wx:elif="{{salesDetail.status==802}}">退款中</text>
+				<text wx:elif="{{salesDetail.status==803}}">退款成功</text>
+
+			</view>
+		</view>
+
+		<view class="list">
+
+			<view class="item" >
+				<view class="left">
+					<image src="{{salesDetail.marketOrderGoodsList[index].goodsImg}}"></image>
+				</view>
+				<view class="right">
+					<text class="po">{{salesDetail.marketOrderGoodsList[index].goodsName}}</text>
+					<view  class="spc"> <text wx:for="{{salesDetail.marketOrderGoodsList[index].spc}}">{{item.specValueName}}</text> </view>
+				</view>
+			</view>
+		</view>
+
+
+	</view>
+
+	<view class="type">
+		<view class="sale">
+			<view class="left">
+				<text>售后类型：</text>
+			</view>
+			<view class="right">
+				<radio-group class="radio-group" bindchange="radioChange" wx:if="{{salesDetail.moduleType==1}}">
+					<label class="radio" wx:for="{{tree}}">
+						<radio class="radio" value="{{item.value}}" checked="{{item.checked}}" /> <text>{{item.name}}</text>
+					</label>
+				</radio-group>
+				<text wx:if="{{salesDetail.moduleType==2}}">退款</text>
+
+			</view>
+		</view>
+
+
+		<view class="way" hidden="{{hidden}}">
+			<text>退货方式：</text>
+			<text>免费上门取货！</text>
+
+		</view>
+	</view>
+
+
+	<view class="num1">
+		<view class="left">购买数量</view>
+		<view class="right">
+			<view class='c-main' bindtap='getMain' data-index="{{index}}">
+				<image src='../../../image/jian@2x.png'></image>
+			</view>
+			<view class='c-num'>{{salesNum}}</view>
+			<view class='c-plus' bindtap='getPlus' data-index="{{index}}">
+				<image src='../../../image/jia@2x.png'></image>
+			</view>
+		</view>
+	</view>
+
+
+  <view class="discribe">
+   <text>问题描述</text>
+    <textarea placeholder="请输入问题描述" placeholder-class="input" bindinput="text"></textarea>
+  </view>
+
+  <view class="upload">
+     <text>上传凭证</text>
+     		<view class="up">
+
+				<uploadImages bindmyevent="myEventListener" count='{{countPic}}' showUrl="{{showImgUrl}}" uploadUrl="{{uploadImgUrl}}" orderId="{{salesDetail.id}}" moduleType="{{salesDetail.moduleType}}"></uploadImages>
+				<view class="more">最多添加 <text>5</text>张图片</view>
+			</view>
+  
+  </view>
+
+
+  <button bindtap="sub">提交</button>
+</view>

@@ -1,0 +1,9 @@
+<view>
+  <picker disabled="{{disabled}}" mode="multiSelector" bindchange="pickerChange" bindcolumnchange="pickerColumnChange" bindcancel ="pickerCancel" value="{{pickerIndex}}" range="{{pickerArray}}" range-key="{{'name'}}">
+    <view >
+      <text style='font-size:28rpx;font-family:PingFang SC;font-weight:500;color:rgba(153,153,153,1);margin-right: 12rpx;vertical-align: middle'>{{placeholder}}</text>
+
+      		<image src="../../image/jinru12@2x.png" class="icon" style=" width: 44rpx;height: 44rpx;vertical-align: middle;"></image>
+    </view>
+  </picker>
+</view>

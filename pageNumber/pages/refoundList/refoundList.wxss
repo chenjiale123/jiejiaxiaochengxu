@@ -1,0 +1,254 @@
+/* pagesSinger//pages/refoundList/refoundList.wxss */
+/* pages/order/order.wxss */
+Page{
+  width: 100%;
+  min-height: 100%;
+
+  background-color: #F5F4F7;
+}
+.show{
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #F5F4F7;
+  padding-top: 24rpx;
+}
+.hidden{
+  display: none;
+
+}
+.contain{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: #F5F4F7;
+  border-radius:30rpx 30rpx 0px 0px;
+}
+.bg{
+  width: 100%;
+  height:170rpx;
+  background:linear-gradient(-10deg,rgba(235,23,27,1) 0%,rgba(255,140,25,1) 100%);
+  text-align: center;
+  padding-top: 67rpx;
+  box-sizing: border-box;
+}
+.bg>text{
+  font-size:36rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(255,255,255,1);
+
+}
+
+.sroll{
+  width:100%;
+  height:60rpx;
+  background:rgba(255,255,255,1);
+  border-radius:30rpx 30rpx 0px 0px;
+  padding:  0 46rpx;
+  box-sizing: border-box;
+  position: relative;
+  top: -20rpx;
+  margin-bottom: 24rpx;
+}
+.swiper-tab{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.swiper-tab-item {
+  width: auto;
+  height: 100%;
+  text-align: center;
+  padding-top: 15rpx;
+}
+.swiper-tab-item >text{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(102,102,102,1);
+}
+.swiper-tab-item >.dibu{
+
+}
+.active>text{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(26,26,26,1);
+  margin-top: 15rpx;
+}
+.active>.dibu{
+  width:72rpx;
+height:6rpx;
+background:linear-gradient(-30deg,rgba(255,56,59,1) 0%,rgba(255,166,76,1) 100%);
+border-radius:3rpx 3rpx 3rpx 3rpx;
+margin: 0 auto;
+margin-top: 22rpx;
+}
+
+
+
+.item{
+  width: 94%;
+  height: auto;
+  overflow: hidden;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 24rpx;
+  border-radius:20rpx;
+  padding: 24rpx 30rpx;
+  box-sizing: border-box;
+}
+.item>.store{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item>.store>.left>.img{
+width: 32rpx;
+height: 32rpx;
+vertical-align: middle;
+}
+.item>.store>.left>text{
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(26,26,26,1);
+vertical-align: middle;
+}
+.item>.store>.left>.icon{
+  width: 42rpx;
+  height: 42rpx;
+  vertical-align: middle;
+}
+.item>.store>.right>text{
+  font-size:26rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,76,79,1);
+}
+.item>.center{
+  margin-top: 37rpx;
+}
+.item>.center>button{
+  width:84rpx;
+height:32rpx;
+background:rgba(242,245,247,1);
+border-radius:16rpx 18rpx 0px 16rpx;
+font-size:20rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(102,102,102,1);
+display: inline-block;
+line-height: 32rpx;
+}
+.item>.center>text{
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+display: inline-block;
+margin-left: 20rpx;
+}
+.list{
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 35rpx;
+}
+.list>.left>image{
+width: 190rpx;
+height: 190rpx;
+}
+.list>.right{
+  width: 67%;
+  height: auto;
+  overflow: hidden;
+}
+.list>.right>.txt{
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+display: block;
+}
+.list>.right>.txt1{
+  display: block;
+  margin-top: 22rpx;
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+}
+.list>.right>.price{
+  margin-top: 33rpx;
+  font-size:32rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(26,26,26,1);
+display: flex;
+justify-content: space-between;
+display: flex;
+justify-content: space-between;
+}
+.list>.right>.price>text:nth-child(1){
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+}
+
+.list>.right>.price>text:nth-child(2){
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,76,79,1);
+}
+.list>.right>.price>button{
+  width:122rpx;
+height:52rpx;
+border:1px solid rgba(153,153,153,1);
+border-radius:26rpx;
+font-size:22rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+
+.btnList{
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: flex-end;
+
+}
+.btnList>button{
+  width:142rpx;
+height:60rpx;
+border:1px solid rgba(153,153,153,1);
+border-radius:30rpx;
+font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+margin-right: 20rpx;
+}
+.info{
+  width: 400rpx;
+  height: 150rpx;
+  margin-left: 20rpx;
+  display: inline-block;
+}
+.info>text{
+  font-size:26rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+line-height: 150rpx;
+}

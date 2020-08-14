@@ -1,0 +1,38 @@
+<!--pages/bill/bill.wxml-->
+<view class="contain">
+
+	<view class="item" wx:for="{{billList}}" wx:key="index">
+		<text>{{item.months}}</text>
+		<view class="listItem">
+
+			<view class="list" wx:for="{{item.child}}">
+				<view class="left">
+					<image src="../../../image/tuikuan@2x.png" wx:if="{{item.consumeType==3}}"></image>
+							<image src="../../../image/xiaofei@2x.png" wx:elif="{{item.consumeType==2}}"></image>
+									<image src="../../../image/chzhi@2x.png" wx:else="{{item.consumeType==1}}"></image>
+					<view class="txt">
+						<text wx:if="{{item.consumeType==3}}">退款-钱包</text>
+							<text wx:elif="{{item.consumeType==2}}">消费-钱包</text>
+								<text wx:else="{{item.consumeType==1}}"> 充值-钱包</text>
+						<text>{{item.createTime}}</text>
+
+					</view>
+
+				</view>
+
+        <view class="right {{item.consumeType==1||item.consumeType==3? 'active':''}}">
+
+		
+				 <text wx:if="{{item.consumeType==1}}" >+</text>
+				 <text wx:if="{{item.consumeType==2}}">-</text>
+				 	 <text wx:if="{{item.consumeType==3}}" >+</text>
+        <text>{{item.consumeAmount}}</text>
+        </view>
+			</view>
+
+
+		</view>
+	</view>
+
+
+</view>

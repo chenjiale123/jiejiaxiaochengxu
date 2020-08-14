@@ -1,0 +1,113 @@
+<!--pages/shopCar/shopCar.wxml-->
+<view class="contain">
+
+	<view class="information">
+
+
+
+
+		<view class="item" bindtap="nickName" >
+			<view class="left">
+				<text>个人信息</text>
+
+			</view>
+			<view class="right">
+
+				<image src="../../../image/jinru12@2x.png" class="icon"></image>
+			</view>
+		</view>
+
+		<view class="item" bindtap="address">
+			<view class="left">
+				<text>常用地址</text>
+
+			</view>
+			<view class="right">
+
+				<image src="../../../image/jinru12@2x.png" class="icon"></image>
+
+			</view>
+		</view>
+		<view class="item" bindtap="phoneChange">
+			<view class="left">
+				<text>更换手机号码</text>
+
+			</view>
+			<view class="right">
+
+				<image src="../../../image/jinru12@2x.png" class="icon"></image>
+
+			</view>
+		</view>
+		<view class="item" bindtap="paymentChange">
+			<view class="left">
+				<text>设置支付密码</text>
+
+			</view>
+			<view class="right">
+			
+				<image src="../../../image/jinru12@2x.png" class="icon"></image>
+
+			</view>
+		</view>
+
+	</view>
+
+	<view class="information">
+
+
+
+
+		<view class="item" bindtap="suggest">
+			<view class="left">
+				<text>意见反馈</text>
+
+			</view>
+			<view class="right">
+
+				<image src="../../../image/jinru12@2x.png" class="icon"></image>
+			</view>
+		</view>
+
+		<view class="item" bindtap="phone">
+			<view class="left">
+				<text>帮助中心</text>
+
+			</view>
+			<view class="right">
+
+				<image src="../../../image/jinru12@2x.png" class="icon"></image>
+
+			</view>
+		</view>
+		<view class="item" bindtap="wechat">
+			<view class="left">
+				<text>关注公众号</text>
+
+			</view>
+			<view class="right">
+
+				<image src="../../../image/jinru12@2x.png" class="icon"></image>
+
+			</view>
+		</view>
+		<view class="item" bindtap="phone">
+			<view class="left">
+				<text>用户协议</text>
+
+			</view>
+			<view class="right">
+			
+				<image src="../../../image/jinru12@2x.png" class="icon"></image>
+
+			</view>
+		</view>
+
+	</view>
+
+<view class="information">
+<text bindtap="exit">退出登录</text>
+</view>
+
+
+</view>

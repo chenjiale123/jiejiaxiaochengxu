@@ -1,0 +1,203 @@
+/* pages/footprint/footprint.wxss */
+/* pages/mine/mine.wxss */
+.show{
+  display: block;
+}
+.hidden{
+  display: none;
+}
+.contain{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: #fff;
+}
+.sroll{
+  width: 100%;
+  height: 94rpx;
+  background-color: #fff;
+}
+.swiper-tab{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.swiper-tab-item {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}
+.swiper-tab-item >text{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(102,102,102,1);
+}
+.swiper-tab-item >.dibu{
+
+}
+.active>text{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(26,26,26,1);
+}
+.active>.dibu{
+  width:72rpx;
+height:6rpx;
+background:linear-gradient(-30deg,rgba(255,56,59,1) 0%,rgba(255,166,76,1) 100%);
+border-radius:3rpx 3rpx 3rpx 3rpx;
+margin: 33rpx auto 0;
+}
+.hopeList{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background:rgba(242,245,247,1);
+border-radius:30rpx 30rpx 0px 0px;
+padding: 50rpx 30rpx;
+box-sizing: border-box;
+}
+.item{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+
+}
+.item>.top>image{
+width: 38rpx;
+height: 38rpx;
+vertical-align: middle;
+}
+.item>.top>text{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(102,102,102,1);
+vertical-align: middle;
+}
+.goods{
+  width: 100%;
+  height: 238rpx;
+  background-color: #fff;
+ 
+border-radius:20rpx;
+margin-top: 30rpx;
+padding: 24rpx;
+box-sizing: border-box;
+
+}
+.goods .left{
+  width:30% ;
+  height: 190rpx;
+}
+.goods .left>image{
+  width: 190rpx;
+  height: 190rpx;
+}
+.goods .right{
+  width: 65%;
+  height: 190rpx;
+  overflow: hidden;
+  position: relative;
+}
+.goods .right>.title{
+  width: 100%;
+  display: block;
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(26,26,26,1);
+text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+}
+.goods .right>.spec{
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+margin-top: 25rpx;
+}
+
+.goods .right>.spec1{
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+margin-top: 22rpx;
+}
+.goods .right>.spec1>image{
+  width: 32rpx;
+height: 32rpx;
+}
+.goods .right>.spec1>text{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+.goods .right>image{
+width: 32rpx;
+height: 32rpx;
+}
+.goods .right>.price{
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.goods .right>.price>.zuo{
+  font-size:22rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,76,80,1);
+}
+.goods .right>.price>.zuo>text{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,76,80,1);
+}
+.goods .right>.price>.you{
+  vertical-align: middle;
+}
+.goods .right>.price>.you>text{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  vertical-align: middle;
+}
+.goods .right>.price>.you>image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.goods>.gooditem{
+  padding-bottom: 23rpx;
+  border-bottom: 1px solid rgba(240,240,240,1);
+  display: flex;
+justify-content: space-between;
+}
+.goods .local{
+  margin-top: 22rpx;
+
+}
+.goods .local>button{
+  width:140rpx;
+height:36rpx;
+background:rgba(242,245,247,1);
+border-radius:18rpx 18rpx 18rpx 0px;
+font-size:22rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(153,153,153,1);
+}
+
+
+
+
+

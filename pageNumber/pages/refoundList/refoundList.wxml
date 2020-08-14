@@ -1,0 +1,45 @@
+<!--pagesSinger//pages/refoundList/refoundList.wxml-->
+<view class="contain">
+	<view class="item" wx:for="{{salesList}}" wx:key="index" wx:if="{{salesList.length>0}}">
+		<view class="store">
+			<view class="left">
+				<image src="../../../image/dp12@2x.png" class="img"></image>
+				<text>{{item.afterSaleStoreVo.name}}</text>
+				<image src="../../../image/jinru (1).png" class="icon"></image>
+			</view>
+			<view class="right">
+				<text >{{item.newestStatusDesc}}</text>
+
+			</view>
+		</view>
+
+		<view class="center">
+			<button>{{item.afterSaleGoodInfoVo.goodClassName}}</button>
+			<text style="display:inline-block;width:500rpx; overflow: hidden;text-overflow:ellipsis;white-space: nowrap;" wx:if="{{item.type==1}}">售后类型：退款退货</text>
+			<text style="display:inline-block;width:500rpx; overflow: hidden;text-overflow:ellipsis;white-space: nowrap;" wx:if="{{item.type==2}}">售后类型：退款</text>
+		</view>
+
+
+		<view class="list" bindtap="orderDetail" data-id="{{item.id}}" data-status="{{item.status}}">
+			<view class="left">
+				<image wx:if="{{item.afterSaleGoodInfoVo.goodsSpecImg==''}}" src="{{item.afterSaleGoodInfoVo.goodsImg}}"></image>
+		<image wx:else src="{{item.afterSaleGoodInfoVo.goodsSpecImg}}"></image>
+			</view>
+			<view class="right">
+				<text class="txt">{{item.afterSaleGoodInfoVo.goodsName}}</text>
+				<view class="txt1"> <text wx:for="{{item.afterSaleGoodInfoVo.spc}}" wx:for-item="items">{{items.specValueName}}</text> </view>
+				<view class="price"><text> X{{item.afterSaleGoodInfoVo.goodsNumber}}</text> <text wx:if="{{item.newestStatus==601||item.newestStatus==602||item.newestStatus==603||item.newestStatus==611||item.newestStatus==612||item.newestStatus==613}}">退款：￥{{item.price}}</text> </view>
+			</view>
+
+		</view>
+
+		<view class="btnList">
+			<button wx:if="{{item.newestStatus==1}}"  bindtap="cancelOrder" data-id="{{item.id}}" data-type="{{item.type}}">取消售后</button>
+			<button  bindtap="findDetail" data-id="{{item.id}}" >查看详情</button>
+		</view>
+
+	</view>
+<view class="item" wx:if="{{salesList.length==0}}">
+   <image src="../../../image/wudd1@2x.png"></image>
+</view>
+</view>

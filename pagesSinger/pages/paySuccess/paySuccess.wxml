@@ -1,0 +1,23 @@
+<!--pagesSinger//pages/paySuccess/paySuccess.wxml-->
+<view class="contain">
+ 
+ <image src="../../../image/guanbi.png" bindtap="close"></image>
+
+ <view class="main">
+ <view class="result">
+ 
+ <image src="../../../image/chgong@2x.png"></image>
+ <text class="txt">支付成功</text>
+
+  <text class="txt1">等待门店确认</text>
+ </view>
+ 
+ <view class="btn">
+ 
+  <text> {{second}}秒 后自动跳转到订单</text>
+  <button bindtap="findOrder">查看订单</button>
+ </view>
+ </view>
+
+
+</view>

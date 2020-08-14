@@ -1,0 +1,59 @@
+<!--pages/classify/classify.wxml-->
+<view class="contain">
+
+	<view class="top">
+		<view class="logo" bindtap="back">
+			<view class="left">
+				<image src="../../../image/fanhui@2x.png"></image>
+			</view>
+			<view class="right">
+				<image src="../../../image/gengduo.png"></image>
+			</view>
+		</view>
+		<view class="search">
+			<input placeholder="搜索服务商品名称" placeholder-class="input" bindfocus="goodsearch">
+			<image src="../../../image/sousuo@2x.png"></image>
+			</input>
+		</view>
+	</view>
+
+
+	<!-- 实现左右联动效果 -->
+	<view class="link">
+		<!-- 左边 -->
+		<scroll-view class="left" scroll-y scroll-with-animation scroll-top="{{scrollTops}}">
+			<view class="item {{tabCur===index?'active':''}}" wx:for="{{tree}}" wx:key="index" data-index="{{index}}" bindtap="tabNav">
+				<view class="line"></view>
+				<text>{{item.name}}</text>
+				<button >{{item.goodsNums}}</button>
+
+			</view>
+
+		</scroll-view>
+
+		<!-- 右边 -->
+		<scroll-view class="right" scroll-y scroll-with-animation scroll-into-view="scroll-{{rightCur}}" bindscroll="scrollLink">
+			<!-- 重点： id="scroll-{{index}}"  这个必须要有 不然实现不了左边联动右边的效果-->
+			<view wx:for="{{tree}}" wx:key="{{index}}" class="right-cont" id="scroll-{{index}}">
+				<view class="title">
+					<text>{{item.name}}</text>
+					<view class="all"  data-id="{{item.id}}"  bindtap="findGood1" data-type="{{item.moduleType}}">
+						<text>全部</text>
+						<image src="../../../image/jinru (1).png"></image>
+					</view>
+				</view>
+				<view class="content">
+					<view class="listItem" wx:for="{{item.subclass}}" wx:for-item="items" data-id="{{items.parentId}}" data-childid="{{items.id}}" bindtap="findGood" data-type="{{items.moduleType}}">
+						<image src="{{items.icon}}"></image>
+						<text>{{items.name}}</text>
+									<button >{{items.goodsNums}}</button>
+
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+
+
+
+</view>

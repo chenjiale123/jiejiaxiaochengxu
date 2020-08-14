@@ -1,0 +1,140 @@
+<view class="contain">
+
+	<view class="top">
+
+		<image src="../../image/image@2x.jpg"></image>
+		<view class="info">
+			<view class="left">
+				<view class="avtor">
+					<image src="{{icon}}"></image>
+				</view>
+
+				<text bindtap="login" >{{name}}</text>
+
+				<view class="edit" bindtap="edit">
+					<text>编辑</text>
+					<image src="../../image/jinru33@2x.png"></image>
+				</view>
+			</view>
+			<view class="right">
+				<view class="set" bindtap="setting">
+					<image src="../../image/shezhi@2x.png"></image>
+				</view>
+
+				<button class="news" open-type="contact">
+					<image src="../../image/xiaoxi@2x.png"></image>
+				</button>
+			</view>
+
+		</view>
+
+		<view class="icon">
+			<view class="item" bindtap="shopping">
+		   <view class="spot" wx:if="{{cardTeams.length>0}}"></view>
+				<image src="../../image/gouwuc22@2x.png"></image>
+				<text>购物车</text>
+			</view>
+			<view class="item">
+				<image src="../../image/youhq@2x.png"></image>
+				<text>优惠券</text>
+			</view>
+
+			<view class="item">
+				<image src="../../image/jifen@2x.png"></image>
+				<text>积分</text>
+			</view>
+			<view class="item" bindtap="footprint">
+				<image src="../../image/zuji@2x.png"></image>
+				<text>足迹</text>
+			</view>
+			
+		</view>
+	</view>
+
+
+	<view class="order">
+		<view class="topOne">
+			<view class="left">
+				<image src="../../image/biaoti@2x.png"></image>
+				<text>我的订单</text>
+			</view>
+			<view class="right" bindtap="findAll">
+				<text>查看全部订单</text>
+				<image src="../../image/jinru12@2x.png"></image>
+			</view>
+		</view>
+		<view class="iconList">
+			<view class="item" bindtap="wait" data-id="1">
+				<image src="../../image/daifj@2x.png"></image>
+				<text>待付款</text>
+			</view>
+			<view class="item" bindtap="ing" data-id="5">
+				<image src="../../image/jinxz@2x.png"></image>
+				<text>进行中</text>
+			</view>
+
+			<view class="item" bindtap="finish" data-id="7">
+				<image src="../../image/yiwc@2x.png"></image>
+				<text>已完成</text>
+			</view>
+			<view class="item" bindtap="comment">
+				<image src="../../image/daipj@2x.png"></image>
+				<text>待评价</text>
+			</view>
+				<view class="item" bindtap="afterSale">
+				<image src="../../image/tuik@2x.png"></image>
+				<text>退款/售后</text>
+			</view>
+		</view>
+	</view>
+	<view class="walet">
+		<view class="topOne">
+			<view class="left">
+				<image src="../../image/biaoti@2x.png"></image>
+				<text>我的钱包</text>
+			</view>
+			<view class="right" bindtap="bill">
+				<text>我的账单</text>
+				<image src="../../image/jinru12@2x.png"></image>
+			</view>
+		</view>
+
+		<view class="money">
+			<view class="left">
+				<image src="../../image/yue@2x.png"></image>
+				<view>
+				{{userDetail.remainingSum}}
+					<text>余额（元）</text>
+				</view>
+			</view>
+			<view class="right">
+				<button bindtap="recharge">前去充值</button>
+			</view>
+		</view>
+	</view>
+
+	<view class="forYou">
+		<view class="topTwo">
+			<view class="left">
+				<image src="../../image/tuijian@2x.png"></image>
+				<text>为你推荐</text>
+			</view>
+			<view class="right">
+				<text>更多</text>
+				<image src="../../image/jinru12@2x.png"></image>
+			</view>
+		</view>
+
+		<view class="goodList">
+		  <view class="listItem" wx:for="{{goodList}}" wx:key="index" bindtap="detail" data-id="{{item.id}}" data-type="{{item.moduleType}}">
+			   <image src="{{item.mainImg}}"></image>
+			   <view class="foot">
+				  <text>{{item.name}}</text>
+					 <view>￥ <text>{{item.price}}</text></view>
+				 
+				 </view>
+			</view>
+		
+		</view>
+	</view>
+</view>

@@ -1,0 +1,59 @@
+<!--pages/comment/comment.wxml-->
+<view class="contain">
+	<view class="top">
+		<view class="logo" bindtap="back">
+			<view class="left">
+				<image src="../../../image/fanhui@2x.png"></image>
+			</view>
+			<view class="right">
+				<image src="../../../image/gengduo.png"></image>
+			</view>
+		</view>
+
+		<text>商品评价</text>
+	</view>
+
+
+	<view class="goodCom" wx:if="{{commentList!==null}}">
+		<image src="../../../image/haoping@2x.png"></image>
+		<text>商品好评度{{rate}}</text>
+	</view>
+
+
+	<view class="swiper-tab1" wx:if="{{commentList!==null}}">
+		<view class="swiper-tab-item1 {{tab==item.id?'active1':''}}" data-current="{{item.id}}"  bindtap="click" wx:for="{{comHead}}" wx:key="{{index}}">
+			<text>{{item.name}}</text>
+			<view class="dibu"></view>
+		</view>
+	</view>
+	<view class="{{tab == comHead[index].id ? 'hidden':'show'}}" wx:if="{{commentList!==null}}">
+		<scroll-view class="content">
+			<view class="item" wx:for="{{commentList}}" wx:key="{{index}}">
+			<view class="topOn">
+				<view class="avota">
+					<image src="{{item.avatarUrl}}"></image>
+					<text class="name">{{item.username}}</text>
+					<view class="star">
+						<image src="../../../image/xing01@2x.png" wx:for='{{item.score}}'></image>
+
+					</view>
+				</view>
+				<text>{{item.commentTime}}</text>
+				</view>
+				<text>{{item.content}}</text>
+				<scroll-view  scroll-x  class="imgArray" wx:if="{{item.enclosureUrl}}">
+					<image wx:for="{{arr}}" src="{{item}}" data-src="{{item}}"></image>
+		
+				</scroll-view >
+			</view>
+
+
+
+		</scroll-view>
+	</view>
+<view class="whole" wx:if="{{commentList==null}}">
+<image src="../../../image/wupj@2x.png"></image>
+
+</view>
+
+</view>

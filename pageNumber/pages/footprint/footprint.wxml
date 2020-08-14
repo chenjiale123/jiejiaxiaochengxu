@@ -1,0 +1,87 @@
+<!--pages/footprint/footprint.wxml-->
+<!--pages/mine/mine.wxml-->
+
+<view class="contain">
+
+	<view class="sroll">
+		<view class="swiper-tab">
+			<view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" wx:for="{{tree}}" wx:key="index" data-id="{{item.id}}">
+				<text>{{item.name}}</text>
+				<view class="dibu"></view>
+			</view>
+		</view>
+	</view>
+
+	<view class="{{currentTab == 0 ? 'show':'hidden'}}">
+		<view class="hopeList">
+			<view class="item" wx:for="{{list}}" wx:key="index" hidden="{{list.length==0}}">
+				<view class="top">
+					<image src="../../../image/shijian@2x.png"></image>
+					<text>{{item.time}}</text>
+				</view>
+
+				<view class="goods">
+					<view class="gooditem">
+						<view class="left" bindtap="detail" data-id="{{item.goodsInfoId}}" data-type="{{item.moduleType}}" data-storeId="{{item.storeId}}">
+							<image src="{{item.goodsSpecImg}}"></image>
+						</view>
+						<view class="right">
+							<text class="title">{{item.goodsName}}</text>
+							<text class="spec">{{item.goodsTitle}}</text>
+
+							<view class="price">
+								<view class="zuo">￥<text>{{item.price}}</text></view>
+								<view class="you" bindtap="store" data-storeid="{{item.storeId}}"> 
+									<text>{{item.storeName}}</text>
+									<image src="../../../image/jinru12@2x.png"></image>
+								</view>
+							</view>
+						</view>
+
+					</view>
+				</view>
+			</view>
+			<view class="item" hidden="{{list.length>0}}">
+				<image src="../../../image/wuzuji@2x.png"></image>
+
+			</view>
+		</view>
+	</view>
+	<view class="{{currentTab == 1 ? 'show':'hidden'}}">
+		<view class="hopeList">
+			<view class="item" wx:for="{{storelist}}" wx:key="index" hidden="{{storelist.length==0}}" >
+				<view class="top">
+					<image src="../../../image/shijian@2x.png"></image>
+					<text>{{item.time}}</text>
+				</view>
+
+				<view class="goods">
+
+					<view class="gooditem" bindtap="storeDetail" data-storeid="{{item.id}}" data-name="{{item.name}}">
+						<view class="left">
+							<image src="{{item.logo}}"></image>
+						</view>
+						<view class="right">
+							<text class="title">{{item.name}}</text>
+							<view class="spec1">
+								<image src="../../../image/dizhi@2x.png"></image>
+								<text>{{item.address}}</text>
+							</view>
+
+							<view class="local">
+								<button>{{item.distance}}</button>
+							</view>
+						</view>
+					</view>
+
+
+				</view>
+			</view>
+			<view class="item" hidden="{{storelist.length>0}}">
+				<image src="../../../image/wuzuji@2x.png"></image>
+
+			</view>
+		</view>
+
+	</view>
+</view>

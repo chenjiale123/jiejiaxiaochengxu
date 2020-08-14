@@ -1,0 +1,95 @@
+<!--pages/myComment/myComment.wxml-->
+<!--pages/mine/mine.wxml-->
+
+<view class="contain">
+
+	<view class="sroll">
+		<view class="swiper-tab">
+			<view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" wx:for="{{tree}}" wx:key="index" data-id="{{item.id}}">
+				<text>{{item.name}}</text>
+				<view class="dibu"></view>
+			</view>
+		</view>
+	</view>
+
+	<view class="{{currentTab == 0 ? 'show':'hidden'}}">
+		<view class="hopeList">
+			<view class="item" wx:for="{{list1}}" wx:key="index"  wx:if="{{list1.length>0}}" >
+				<view class="top">
+					<image src="../../../image/wdian@2x.png"></image>
+					<text>{{item.storeName}}</text>
+					<image src="../../../image/jinru12@2x.png"></image>
+				</view>
+
+				<view class="goods">
+					<view class="left">
+						<image src="{{item.specImg}}"></image>
+					</view>
+					<view class="right">
+						<text class="title">{{item.goodsName}}</text>
+						<text class="spec" wx:if="{{item.specValue!==null}}">{{item.specValue}}</text>
+						<button bindtap="comment" data-id="{{item}}">评价</button>
+					</view>
+				</view>
+			</view>
+   <view class="item" wx:if="{{list1.length==0}}">
+			  <image src="../../../image/wupj@2x.png"></image>
+			 </view>
+		</view>
+	</view>
+	<view class="{{currentTab == 1 ? 'show':'hidden'}}">
+		<view class="hopeList">
+			<view class="item" wx:for="{{list}}" wx:key="index" wx:if="{{list.length>0}}">
+				<view class="top">
+					<image src="../../../image/wdian@2x.png"></image>
+					<text>{{item.storeName}}</text>
+					<image src="../../../image/jinru12@2x.png"></image>
+				</view>
+
+				<view class="goodsReman" bindtap="detail" data-id="{{item.goodsInfoId}}" data-type="{{item.moduleType}}">
+
+					<view class="head">
+						<view class="left">
+							<image src="{{item.specImg}}"></image>
+						</view>
+						<view class="right">
+							<text class="title">{{item.goodsName}}</text>
+							<text class="spec">{{item.specValue}}</text>
+							<view class="scroe">
+								<text >评分</text>
+								<view class="star">
+									<image src="../../../image/xing01@2x.png" wx:for="{{item.score}}" wx:key='index'></image>
+								</view>
+							</view>
+						</view>
+					</view>
+					<image src="../../../image/jiantou@2x.png"></image>
+					<view class="comment">
+						<text>{{item.content}}</text>
+				<scroll-view  scroll-x  class="imgArray" wx:if="{{item.enclosureUrl}}">
+					<image wx:for="{{item.ImagePath}}" src="{{item}}" data-src="{{item}}"></image>
+		
+				</scroll-view >
+
+						<view class="start">
+							<view class="zuo">
+								<image src="../../../image/shijian@2x.png"></image>
+								<text>{{item.commentTime}}</text>
+
+							</view>
+							<view class="you">
+								<button wx:if="{{item.isAnonymous=='1'}}" bindtap="set" data-id="{{item.id}}">启用匿名</button>
+							</view>
+						</view>
+
+					</view>
+
+				</view>
+			</view>
+       <view class="item" wx:if="{{list.length==0}}">
+			  <image src="../../../image/wupj@2x.png"></image>
+			 </view>
+		</view>
+
+	</view>
+</view>

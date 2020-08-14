@@ -1,0 +1,24 @@
+<!--pages/loginUser/loginUser.wxml-->
+<view class="contain">
+
+  <view class="logo">
+  <image src="../../../image/logo@3x.png" ></image>
+  <image src="../../../image/xuch@3x.png"></image>
+  </view>
+
+  <view class="loginBtn">
+    <view class="remain">
+      <image src="../../../image/tishi@2x.png"></image>
+      <text>请完成微信授权以继续使用</text>
+    </view>
+    
+   <button class="wx" open-type="getUserInfo" bindgetuserinfo="queryUserInfo"    hover-class="none">
+   <image src="../../../image/button@3x.png"></image>
+   <text>授权微信用户信息</text></button>
+
+  </view>
+ 
+
+                            
+
+</view>

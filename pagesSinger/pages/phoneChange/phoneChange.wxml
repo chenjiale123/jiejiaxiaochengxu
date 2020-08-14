@@ -1,0 +1,50 @@
+<!--pages/phoneChange/phoneChange.wxml-->
+<view class="contain" wx:if="{{show==false}}">
+
+<view class="phone">
+<text>+86</text>
+<input placeholder="请输入手机号" placeholder-class="num" bindinput="phone"></input>
+
+<view class="code" bindtap="getCode">
+
+	<text  wx:if="{{code}}">{{time}}s</text>
+<text wx:else>获取验证码</text>
+</view>
+
+</view>
+
+
+<view class="shuru">
+<input placeholder="请输入手机验证码" placeholder-class="num1" bindinput="code"></input>
+</view>
+
+
+<button bindtap="next" class="btn1" hidden="{{!hidden}}" >下一步</button>
+<button bindtap="next" class="btn2" hidden="{{hidden}}">下一步</button>
+</view>
+
+
+
+<view class="contain" wx:if="{{show==true}}">
+
+<view class="phone">
+<text>+86</text>
+<input placeholder="请输入新手机号" placeholder-class="num" bindinput="newphone"></input>
+
+<view class="code" bindtap="newgetCode">
+
+	<text  wx:if="{{newcode}}">{{newtime}}s</text>
+<text wx:else>获取验证码</text>
+</view>
+
+</view>
+
+
+<view class="shuru">
+<input placeholder="请输入手机验证码" placeholder-class="num1" bindinput="newcode"></input>
+</view>
+
+
+<button bindtap="change" class="btn1" hidden="{{!hidden}}" >确定更换</button>
+<button bindtap="change" class="btn2" hidden="{{hidden}}">确定更换</button>
+</view>

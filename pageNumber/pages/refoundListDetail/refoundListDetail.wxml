@@ -1,0 +1,291 @@
+<!--pagesSinger//pages/refoundListDetail/refoundListDetail.wxml-->
+<view class="contain">
+	<view class="top">
+		<image src="../../../image/image12@2x.png" class="bj"></image>
+		<image src="../../../image/fanhui@2x.png" class="back" bindtap="back"></image>
+
+		<view class="status">
+			<view class="wallet">
+				<image src="../../../image/yiwajc@2x.png" wx:if="{{saleDetail.newestStatus==601||saleDetail.newestStatus==602||saleDetail.newestStatus==603||saleDetail.newestStatus==604||saleDetail.newestStatus==605||saleDetail.newestStatus==611||saleDetail.newestStatus==612||saleDetail.newestStatus==613||saleDetail.newestStatus==614||saleDetail.newestStatus==615}}"></image>
+				<image src="../../../image/tuik12@2x.png" wx:elif="{{saleDetail.newestStatus==401||saleDetail.newestStatus==402||saleDetail.newestStatus==403||saleDetail.newestStatus==411||saleDetail.newestStatus==412||saleDetail.newestStatus==413}}"></image>
+				<image src="../../../image/yicl11@2x.png" wx:elif="{{saleDetail.newestStatus==201||saleDetail.newestStatus==202||saleDetail.newestStatus==203||saleDetail.newestStatus==211||saleDetail.newestStatus==51||saleDetail.newestStatus==52||saleDetail.newestStatus==1||saleDetail.newestStatus==301||saleDetail.newestStatus==302||saleDetail.newestStatus==311}}"></image>
+				<image src="../../../image/quxiao@2x.png" wx:elif="{{saleDetail.newestStatus==71||saleDetail.newestStatus==72||saleDetail.newestStatus==73||saleDetail.newestStatus==74||saleDetail.newestStatus==75}}"></image>
+
+				<text wx:if="{{saleDetail.newestStatus==601||saleDetail.newestStatus==602||saleDetail.newestStatus==603||saleDetail.newestStatus==604||saleDetail.newestStatus==605||saleDetail.newestStatus==611||saleDetail.newestStatus==612||saleDetail.newestStatus==613||saleDetail.newestStatus==614||saleDetail.newestStatus==615}}">售后已完成</text>
+				<text wx:elif="{{saleDetail.newestStatus==401||saleDetail.newestStatus==402||saleDetail.newestStatus==403||saleDetail.newestStatus==411||saleDetail.newestStatus==412||saleDetail.newestStatus==413}}">退款中</text>
+				<text wx:elif="{{saleDetail.newestStatus==201||saleDetail.newestStatus==202||saleDetail.newestStatus==301||saleDetail.newestStatus==302||saleDetail.newestStatus==203}}">门店已处理</text>
+				
+	      	<text wx:elif="{{saleDetail.newestStatus==1}}">门店待处理</text>
+					 	<text wx:elif="{{saleDetail.newestStatus==51||saleDetail.newestStatus==52}}">平台待处理</text>
+						<text wx:elif="{{saleDetail.newestStatus==71||saleDetail.newestStatus==72||saleDetail.newestStatus==73||saleDetail.newestStatus==74||saleDetail.newestStatus==75}}">已取消</text>
+				<text wx:else="{saleDetail.newestStatus==311||saleDetail.newestStatus==211}}">平台已处理</text>
+
+
+
+
+			</view>
+			<view class="pay" wx:if="{{saleDetail.newestStatus==201}}">
+				<text >请选择服务时间！</text>
+				<text >{{rocallTime}}后自动取消售后</text>
+
+			</view>
+
+		
+			
+			<view class="pay" wx:elif="{{saleDetail.newestStatus==1}}">
+
+				<text >门店将在1-3个工作日内处理，请您耐心等待！</text>
+
+			</view>
+					<view class="pay" wx:elif="{{saleDetail.newestStatus==311}}">
+      	<text >{{rocallTime}}后自动取消售后</text>
+				<text >平台已收到您提交的服务时间。请耐心等待派工！</text>
+
+			</view>
+				<view class="pay" wx:elif="{{saleDetail.newestStatus==203}}">
+
+				<text >门店拒绝您的退款申请！</text>
+
+			</view>
+
+					<view class="pay" wx:elif="{{saleDetail.newestStatus==211}}">
+
+				<text >平台同意了你的申请，请选择服务时间</text>
+
+			</view>
+
+					<view class="pay" wx:elif="{{saleDetail.newestStatus==614}}">
+
+				<text >平台已拒绝您的退货退款申请！</text>
+
+			</view>
+					<view class="pay" wx:elif="{{saleDetail.newestStatus==615}}">
+
+				<text >平台已拒绝您的退款申请！</text>
+
+			</view>
+				<view class="pay" wx:elif="{{saleDetail.newestStatus==202}}">
+
+				<text >门店拒绝您的退款退货申请！</text>
+
+			</view>
+							<view class="pay" wx:elif="{{saleDetail.newestStatus==51||saleDetail.newestStatus==52}}">
+
+				<text >平台将在1-3个工作日内处理，请您耐心等待！</text>
+
+			</view>
+			<view class="pay" wx:elif="{{saleDetail.newestStatus==601||saleDetail.newestStatus==602||saleDetail.newestStatus==603||saleDetail.newestStatus==604||saleDetail.newestStatus==605||saleDetail.newestStatus==611||saleDetail.newestStatus==612||saleDetail.newestStatus==613}}">
+
+				<text >本次售后服务已完成！</text>
+
+			</view>
+			<view class="pay" wx:elif="{{saleDetail.newestStatus==301||saleDetail.newestStatus==302}}">
+				<text >门店已收到您提交的服务时间，请耐心等待派工！</text>
+
+			</view>
+
+			<view class="pay" wx:elif="{{saleDetail.newestStatus==401||saleDetail.newestStatus==402||saleDetail.newestStatus==403||saleDetail.newestStatus==411||saleDetail.newestStatus==412||saleDetail.newestStatus==413}}">
+				<text >门店已收到商品，退款中！</text>
+
+			</view>
+
+			<view class="pay" wx:elif="saleDetail.newestStatus==71||saleDetail.newestStatus==72||saleDetail.newestStatus==73||saleDetail.newestStatus==74||saleDetail.newestStatus==75}}">
+				<text >您选择服务时间超时，已自动取消售后申请！</text>
+
+			</view>
+		</view>
+	</view>
+
+
+	<view class="step">
+		<!-- <button wx:if="{{saleDetail.newestStatus==201||saleDetail.newestStatus==211}}">选择服务时间</button> -->
+
+				<picker  wx:if="{{saleDetail.newestStatus==201||saleDetail.newestStatus==211}}" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+				<view class="button">
+					<text>选择服务时间</text>
+				
+				</view>
+			</picker>
+			<view wx:elif="{{saleDetail.newestStatus==311}}" class="button1">
+			<text>服务时间：</text>
+		 <text>{{saleDetail.serviceTimeStart}}-{{saleDetail.serviceTimeEnd}}</text>
+			</view>
+			
+		<view class="stepInfo" wx:if="{{saleDetail.newestStatus==1||saleDetail.newestStatus==201||saleDetail.newestStatus==202||saleDetail.newestStatus==211||saleDetail.newestStatus==301||saleDetail.newestStatus==302||saleDetail.newestStatus==311||saleDetail.newestStatus==51||saleDetail.newestStatus==52||saleDetail.newestStatus==601||saleDetail.newestStatus==602||saleDetail.newestStatus==603||saleDetail.newestStatus==604||saleDetail.newestStatus==605||saleDetail.newestStatus==611||saleDetail.newestStatus==612||saleDetail.newestStatus==613||saleDetail.newestStatus==614||saleDetail.newestStatus==615}}">
+			<view class="steps ">
+				<view class="li {{item.isLight ==1? 'active' : ''}}" style="width:{{kuan}}%" wx:for="{{saleDetail.processList}}" wx:key="index">
+					<view class="txtList">
+						<text>{{item.statusDesc}}</text>
+
+					</view>
+
+				</view>
+
+			</view>
+	</view>
+</view>
+
+<view class="result">
+	<view class="code">
+		<text>售后编号：</text>
+		<text>{{saleDetail.afterSaleNumber}}</text>
+	</view>
+
+	<view class="code">
+		<text>售后类型：</text>
+		<text wx:if="{{saleDetail.type===1}}"> 退货退款</text>
+		<text wx:if="{{saleDetail.type===2}}"> 退款</text>
+	</view>
+
+	<view class="disc">
+
+		<view class="title">
+			<view class="left">
+				<image src="../../../image/biaoti11@2x.png"></image>
+				<text>问题描述</text>
+			</view>
+			<view class="right">
+				<text>{{saleDetail.createTime}}</text>
+			</view>
+
+		</view>
+		<view class="detail">
+				<text>{{saleDetail.applyReason}}</text>
+				<view class="img" >
+					<image src="{{item}}" wx:for="{{saleDetail.voucher}}" wx:key="index"></image>
+
+				</view> 
+			</view>
+
+
+
+
+		<view class="store" wx:if="{{saleDetail.newestStatus==201||saleDetail.newestStatus==202||saleDetail.newestStatus==51||saleDetail.newestStatus==203||saleDetail.newestStatus==211||saleDetail.newestStatus==301||saleDetail.newestStatus==302||saleDetail.newestStatus==311||saleDetail.newestStatus==601||saleDetail.newestStatus==602||saleDetail.newestStatus==603||saleDetail.newestStatus==604||saleDetail.newestStatus==605||saleDetail.newestStatus==611||saleDetail.newestStatus==612||saleDetail.newestStatus==613||saleDetail.newestStatus==614||saleDetail.newestStatus==615}}">
+			<view class="title1">
+				<view class="left">
+					<text> 门店处理结果</text>
+          <text wx:if="{{saleDetail.storeDealStatusDesc!==null}}"> {{saleDetail.storeDealStatusDesc}}</text>
+				</view>
+				<view class="right">
+					<text>{{saleDetail.storeDealTime}}</text>
+				</view>
+
+			</view>
+			<view class="detail1">
+				<text wx:if="{{saleDetail.storeDealRemark!==null}}">{{saleDetail.storeDealRemark}}</text>
+				<view class="img" >
+					<image src="{{item}}" wx:for="{{saleDetail.storeDealVoucher}}" wx:key="index"></image>
+
+				</view>
+			</view>
+		</view>
+				<view class="palt" wx:if="{{saleDetail.newestStatus==211||saleDetail.newestStatus==311||saleDetail.newestStatus==302||saleDetail.newestStatus==601||saleDetail.newestStatus==602||saleDetail.newestStatus==605||saleDetail.newestStatus==611||saleDetail.newestStatus==612||saleDetail.newestStatus==613||saleDetail.newestStatus==614||saleDetail.newestStatus==615}}">
+			<view class="title1">
+				<view class="left">
+					<text> 平台处理结果</text>
+          <text wx:if="{{saleDetail.storeDealStatusDesc!==null}}"> {{saleDetail.systemDealStatusDesc}}</text>
+				</view>
+				<view class="right">
+					<text>{{saleDetail.systemDealTime}}</text>
+				</view>
+
+			</view>
+			<view class="detail1">
+				<text wx:if="{{saleDetail.systemDealRemark!==null}}">{{saleDetail.systemDealRemark}}</text>
+				<view class="img" >
+					<image src="{{item}}" wx:for="{{saleDetail.systemDealVoucher}}" wx:key="index"></image>
+
+				</view>
+			</view>
+		</view>
+  </view>
+</view>
+
+<view class="good">
+	<view class="store1">
+		<view class="left">
+			<image src="../../../image/dp12@2x.png" class="dp"></image>
+			<text>{{saleDetail.afterSaleStoreVo.name}}</text>
+			<image src="../../../image/jinru (1).png" class="icon"></image>
+
+		</view>
+		<view class="right">
+			<button>{{saleDetail.afterSaleGoodInfoVo.goodClassName}}</button>
+		</view>
+	</view>
+	<view class="list" bindtap="saleDetail" data-id="{{item.orderId}}" data-newestStatus="{{item.newestStatus}}">
+		<view class="left">
+		
+			
+		<image wx:if="{{saleDetail.afterSaleGoodInfoVo.goodsSpecImg}}" src="{{saleDetail.afterSaleGoodInfoVo.goodsSpecImg}}"></image>
+		<image wx:if="{{!saleDetail.afterSaleGoodInfoVo.goodsSpecImg}}" src="{{saleDetail.afterSaleGoodInfoVo.goodsImg}}"></image>
+		</view>
+		<view class="right">
+			<text class="txt">{{saleDetail.afterSaleGoodInfoVo.goodsName}}</text>
+			<view class="txt1"> <text wx:for="{{saleDetail.afterSaleGoodInfoVo.spc}}" wx:for-item="items">{{items.specValueName}}</text> </view>
+			<view class="price"><text> X{{saleDetail.afterSaleGoodInfoVo.goodsNumber}}</text> </view>
+		</view>
+
+	</view>
+</view>
+
+<view class="info">
+	<view class="item">
+		<view class="left">
+			<text>门店电话:   {{saleDetail.afterSaleStoreVo.storeContactPhone}}</text>
+
+		</view>
+
+		<view class="right" bindtap="dianhua">
+			<image src="../../../image/dianh11@2x.png"></image>
+			<text>拨打</text>
+		</view>
+
+	</view>
+
+	<view class="item">
+		<view class="left">
+			<text>门店地址:   {{saleDetail.afterSaleStoreVo.address}}</text>
+
+		</view>
+
+		<view class="right" bindtap="daohang">
+			<image src="../../../image/daohang1@2x.png"></image>
+			<text>导航</text>
+		</view>
+
+	</view>
+</view>
+<view class="code">
+
+	<view class="copy">
+
+		<text class="txt">订单编号：</text>
+		<text class="txt1">{{saleDetail.afterSaleOrderVo.orderNumber}}</text>
+
+	</view>
+
+	<view class="copy">
+		<text class="txt" >联系人：</text>
+		<text class="txt1">{{saleDetail.afterSaleOrderVo.contactName}}</text>
+	</view>
+	<view class="copy">
+		<text class="txt" >联系电话：</text>
+		<text class="txt1">{{saleDetail.afterSaleOrderVo.contactNumber}}</text>
+	</view>
+	<view class="copy">
+		<text class="txt" >详细地址：</text>
+		<text class="txt1">{{saleDetail.afterSaleOrderVo.address}}</text>
+	</view>
+
+
+</view>
+	<view class="btnList" wx:if="{{saleDetail.newestStatus==1}}">
+		<button bindtap="cancel" data-id="{{saleDetail.id}}">取消售后</button>
+	</view>
+
+		<view class="btnList" wx:if="{{saleDetail.newestStatus==202||saleDetail.newestStatus==203}}">
+		<button bindtap="palt" data-id="{{saleDetail.id}}">平台介入</button>
+			<button bindtap="agree" data-id="{{saleDetail.id}}">同意结果</button>
+	</view>
+</view>

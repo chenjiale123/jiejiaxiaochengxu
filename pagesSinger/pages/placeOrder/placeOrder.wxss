@@ -1,0 +1,686 @@
+/* pagesSinger//pages/placeOrder/placeOrder.wxss */
+.contain1{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: #F2F5F7;
+}
+
+.address{
+  width: 94%;
+  height: auto;
+  overflow: hidden;
+  background-color: #fff;
+  margin:0  auto;
+  padding:  0 30rpx;
+  box-sizing: border-box;
+  border-radius:20rpx;
+}
+.next{
+  padding: 24rpx 0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+}
+.next>.addlist{
+width: 100%;
+height: auto;
+overflow: hidden;
+display: flex;
+justify-content: space-between;
+
+}
+.next>.addlist>text{
+  font-size:36rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(26,26,26,1);
+display: block;
+width: 90%;
+}
+.next>.addlist>image{
+  width: 44rpx;
+  height: 44rpx;
+}
+.next>.name{
+  margin-top: 19rpx;
+}
+.next>.name>text:nth-child(1){
+  font-size:26rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.next>.name>text:nth-child(2){
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-left: 35rpx;
+}
+.address>.top{
+  width: 100%;
+  height: 99rpx;
+  border-bottom: 1px solid #F0F0F0;
+   display: flex;
+   align-items: center;
+}
+.address>.top>image{
+  width: 44rpx;
+  height: 44rpx;
+}
+.address>.top>text{
+  font-size:36rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,76,79,1);
+margin-left: 9rpx;
+}
+.address>.down{
+  width: 100%;
+  height: 99rpx;
+  border-bottom: 1px solid #F0F0F0;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.address>.down>text{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(26,26,26,1);
+}
+.address>.down view>text{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,76,79,1);
+vertical-align: middle;
+}
+.address>.down view>image{
+  width: 44rpx;
+  height: 44rpx;
+  vertical-align: middle;
+}
+.main1{
+  width: 94%;
+  height: auto;
+  overflow: hidden;
+  background-color: #fff;
+  margin:0  auto;
+  padding:   30rpx;
+  box-sizing: border-box;
+  margin-top: 24rpx;
+  border-radius: 20rpx;
+  position: relative;
+}
+.lock{
+  position: absolute;
+  top: 75rpx;
+  left: 50%;
+  margin-left: -46%;
+  width: 92%;
+  height:112rpx;
+background:rgba(0,0,0,0.7);
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 30rpx;
+box-sizing: border-box;
+border-radius: 20rpx;
+z-index: 999999999;
+
+}
+.lock>.left>image{
+width: 28rpx;
+height: 28rpx;
+}
+.lock>.left>text{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+margin-left: 14rpx;
+}
+.lock>.right>button{
+  width:166rpx;
+height:62rpx;
+background:linear-gradient(-25deg,rgba(0,209,84,1) 0%,rgba(0,187,204,1) 100%);
+border-radius:31rpx;
+font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+
+}
+.main1>.title>image{
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+.main1>.title>text{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+vertical-align: middle;
+margin-left: 12rpx;
+}
+.main1>.title>button{
+  display: inline-block;
+  width:84rpx;
+height:32rpx;
+background:rgba(242,245,247,1);
+border-radius:18rpx 16rpx 16rpx 0px;
+font-size:20rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(102,102,102,1);
+margin-left: 15rpx;
+vertical-align: middle;
+line-height: 35rpx;
+}
+.goodList{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-bottom: 1px solid #F0F0F0;
+  margin-top: 34rpx;
+}
+.goodList>.item{
+  width: 100%;
+  height: 190rpx;
+  margin-bottom: 44rpx;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.goodList>.item>image{
+  width: 190rpx;
+  height: 190rpx;
+}
+.goodList>.item>.right{
+  width: 64%;
+  height: 100%;
+
+}
+.goodList>.item>.right>.txt{
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(26,26,26,1);
+display: block;
+}
+.goodList>.item>.right>.txttwo{
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(102,102,102,1);
+margin-top: 19rpx;
+}
+.goodList>.item>.right>.price{
+  margin-top: 28rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.goodList>.item>.right>.price>text:nth-child(1){
+  font-size:32rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(255,76,79,1);
+}
+.goodList>.item>.right>.price>text:nth-child(2){
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.goodList>.allPri{
+  width: 100%;
+  height: 158rpx;
+  line-height: 60rpx;
+  border-bottom: 1px solid #F0F0F0;
+
+}
+.goodList>.allPri>.money{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 30rpx;
+  justify-content: space-between;
+}
+.goodList>.allPri>.money>text:nth-child(1){
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.goodList>.allPri>.money>text:nth-child(2){
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(26,26,26,1);
+}
+.all{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.all>text:nth-child(1){
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.all>text:nth-child(2){
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(255,76,79,1);
+}
+.remain{
+  width: 94%;
+  height: 186rpx;
+  overflow: hidden;
+  background-color: #fff;
+  margin:0  auto;
+  padding:  0 30rpx;
+  box-sizing: border-box;
+  margin-top: 24rpx;
+  line-height: 80rpx;
+  border-radius: 20rpx;
+}
+.remain>.way{
+  display: flex;
+  justify-content: space-between;
+
+}
+.remain>.way>text{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.remain>.way>view>text{
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(179,179,179,1);
+  vertical-align: middle;
+}
+.remain>.way>view>image{
+  width: 44rpx;
+  height: 44rpx;
+  vertical-align: middle;
+}
+.remain>.pay{
+display: flex;
+justify-content: space-between;
+}
+.remain>.pay>text{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.btn{
+  margin-top: 24rpx;
+  width: 94%;
+  height:98rpx;
+background:rgba(51,51,51,1);
+border-radius:49px;
+margin: 0 auto;
+margin-top: 24rpx;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.btn>text{
+  font-size:32rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(255,255,255,1);
+}
+.btn>button{
+  width:216rpx;
+height:98rpx;
+background:linear-gradient(-25deg,rgba(255,56,59,1) 0%,rgba(255,166,76,1) 100%);
+border-radius:0px 49rpx 49rpx 0px;
+font-size:32rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1)
+}
+
+.cu{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99999999;
+
+}
+
+
+/* 地址模块css */
+
+.select>.title{
+  width: 100%;
+  height: 98rpx;
+  line-height: 98rpx;
+  position: relative;
+  text-align: center;
+}
+.select>.title>text{
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+}
+.select>.title>image{
+  width:42rpx;
+height:42rpx;
+position: absolute;
+right: 42rpx;
+top: 34rpx;
+}
+.cu .whole{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  height:728rpx;
+background:rgba(255,255,255,1);
+border-radius:30rpx 30rpx 0px 0px;
+left: 0;
+}
+.cu .contain{
+  width: 94%;
+  margin: 0 auto;
+ /* text-align: center; */
+ height: 728rpx;
+ overflow: auto;
+ padding-bottom: 100rpx;
+margin-bottom: 100rpx;
+}
+.cu .contain>image{
+  width: 432rpx;
+  height: 324rpx;
+  margin: 0 auto;
+ margin-top: 130rpx;
+ display: block;
+ 
+}
+.cu .contain>button{
+  width: 92%;
+  position: fixed;
+  height:80rpx;
+  left: 50%;
+  margin-left: -46%;
+  bottom: 20rpx;
+  background:rgba(242,245,247,1);
+  border-radius:40rpx 40rpx 40rpx 40rpx;
+  z-index: 99999;
+  font-size: 28rpx;
+}
+.cu .list{
+width: 100%;
+height: 728rpx;
+overflow: hidden;
+padding-bottom: 100rpx;
+margin-bottom: 100rpx;
+}
+.cu .con{
+  width: 100%;
+height: 728rpx;
+overflow: auto;
+padding-bottom: 300rpx;
+margin-bottom: 100rpx;
+
+}
+.cu .tp{
+  width: 100%;
+  height: 148rpx;
+  overflow: hidden;
+
+
+
+
+position: relative; 
+
+
+}
+.cu .tp2{
+  width: 100%;
+  height: 148rpx;
+  overflow: hidden;
+
+
+
+
+position: relative; 
+
+
+}
+.cu  .tp1{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+
+/* line-height: 148rpx; */
+border-bottom:1px solid #eee ;
+align-items: center;
+
+
+
+position: relative; 
+}
+.cu  .tp2>text{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+margin-left: 82rpx;
+}
+
+.cu .right{
+  width: 90%;
+  height: auto;
+  overflow: hidden;
+ vertical-align: middle;
+ display: flex;
+ justify-content: flex-start;
+ align-items: center;
+
+}
+.cu .radio{
+  display: inline-block;
+  
+}
+.cu .main{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20rpx;
+
+  
+}
+.cu radio .wx-radio-input{
+  width: 42rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 42rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  border-color: rgb(236, 234, 226); /* 边框颜色 */
+}
+
+.cu radio .wx-radio-input.wx-radio-input-checked{
+  width: 42rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 42rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  border: 2px  solid rgba(255,166,76,1); /* 边框颜色 */
+  background: none;
+}
+
+.cu radio .wx-radio-input.wx-radio-input-checked::before{
+  border-radius: 50%;/* 圆角 */
+  width: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size:30rpx; /* 对勾大小 30rpx */
+  color:rgba(255,166,76,1); /* 对勾颜色 白色 */
+  /* border: 1rpx solid #f00; */
+  background: none;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+  }
+
+
+
+  .cu  .right .address1{
+     width: 100%;
+     height: auto;
+     overflow: hidden;
+  
+ }
+ .cu  .right .address1>image{
+  width:56rpx;
+  height:28rpx;
+ }
+ .cu  .right .address1>text{
+   margin-left: 12rpx;
+  font-size:30rpx;
+  font-family:Microsoft YaHei;
+  font-weight:400;
+  color:rgba(26,26,26,1);
+
+ }
+ .cu .tp2  .right .address1>text{
+  margin-left: 12rpx;
+ font-size:30rpx;
+ font-family:Microsoft YaHei;
+ font-weight:400;
+ color:rgba(179,179,179,1);
+
+}
+ .cu  .right .name{
+  font-size:26rpx;
+  font-family:Microsoft YaHei;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+ 
+ }
+ .cu  .right .phone{
+  font-size:26rpx;
+  font-family:Microsoft YaHei;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  margin-left: 15rpx;
+ }
+ .cu   .tp2  .right .name{
+  font-size:26rpx;
+  font-family:Microsoft YaHei;
+  font-weight:400;
+ color:rgba(179,179,179,1);
+ 
+ }
+ .cu   .tp2  .right .phone{
+  font-size:26rpx;
+  font-family:Microsoft YaHei;
+  font-weight:400;
+ color:rgba(179,179,179,1);
+  margin-left: 15rpx;
+ }
+ .cu  .right2{
+   width: 10%;
+   height: auto;
+   overflow: hidden;
+ }
+ .cu .right2>image{
+  width:42rpx;
+  height:42rpx;
+  vertical-align: middle;
+ }
+
+ .cu .whole>button{
+
+
+    width:90%;
+height:98rpx;
+background:linear-gradient(-10deg,rgba(255,56,59,1) 0%,rgba(255,166,76,1) 100%);
+border-radius:49px;
+
+ text-align: center;
+ line-height: 98rpx;
+ margin: 0 auto;
+ margin-top: 30rpx;
+ margin-bottom: 50rpx;
+}
+.cu button>image{
+  display: inline-block;
+  width:28px;
+height:28px;
+}
+.cu button>text{
+  font-size:28rpx;
+font-family:Microsoft YaHei;
+font-weight:400;
+color:#1A1A1A;
+margin-left: 5rpx;
+}
+
+
+
+
+/* 删除外层包裹视图 */
+.cu .list_del{ 
+  position: absolute; 
+  top:0; 
+} 
+.cu .list_del.txt{ 
+  position: relative;
+  background-color: #fff; 
+  width: 100%; 
+  height: 100%;
+  z-index: 5; 
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+  transition: left 1s ease-in-out; 
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis; 
+} 
+/* 删除 */
+.cu .list_del.del{ 
+  background-color: #e64340; 
+  width: 180rpx;text-align: center; 
+  z-index: 4; 
+  right: 0; 
+  color: #fff ;
+  height: 100%;
+  line-height: 148rpx;
+ 
+}
+.cu .address>image{
+  width: 56rpx;
+  height: 28rpx;
+  margin-right: 15rpx;
+}
+.liuyan{
+
+}
+.sole{
+  display: block;
+  width: 50%;
+  text-align: right;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  height: 90rpx;
+}
+

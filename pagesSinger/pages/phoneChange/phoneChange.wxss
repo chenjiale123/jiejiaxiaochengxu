@@ -1,0 +1,111 @@
+/* pages/phoneChange/phoneChange.wxss */
+.contain{
+ width: 100%; 
+ height: 100%;
+ background-color: #fff;
+ padding-top: 113rpx;
+ box-sizing: border-box;
+}
+.phone{
+  width: 94%;
+  height:98rpx;
+background:rgba(242,245,247,1);
+margin: 0 auto;
+border-radius:49rpx;
+position: relative;
+}
+.phone>input{
+  width:100%;
+  height: 100%;
+  padding-left: 115rpx;
+  box-sizing: border-box;
+}
+.phone>text{
+  position: absolute;
+  top:30rpx;
+  left: 30rpx;
+  font-size:32rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(179,179,179,1);
+}
+.num{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(179,179,179,1);
+}
+.num1{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(179,179,179,1);
+}
+.phone>.code{
+  width: 200rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border-left: 1px solid #fff;
+  text-align: center;
+  z-index: 999999999999999999999;
+}
+.phone>.code>text{
+  font-size:26rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,76,79,1);
+line-height: 98rpx;
+}
+.shuru{
+  width: 94%;
+  height:98rpx;
+background:rgba(242,245,247,1);
+margin: 0 auto;
+border-radius:49rpx;
+position: relative;
+margin-top: 40rpx;
+}
+.shuru>input{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-left: 37rpx;
+}
+button{
+  width: 94%;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  height:98rpx;
+background:linear-gradient(-10deg,rgba(255,56,59,1) 0%,rgba(255,166,76,1) 100%);
+border-radius:49rpx;
+font-size:32rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+}
+.btn1{
+  width: 94%;
+  height:98rpx;
+background:linear-gradient(-10deg,rgba(255,127,130,1) 0%,rgba(255,204,153,1) 100%);
+border-radius:49rpx;
+margin: 0 auto;
+margin-top: 50rpx;
+font-size:32rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+}
+.btn2{
+  width: 94%;
+  height:98rpx;
+  background:linear-gradient(-10deg,rgba(255,56,59,1) 0%,rgba(255,166,76,1) 100%);
+border-radius:49rpx;
+margin: 0 auto;
+margin-top: 50rpx;
+font-size:32rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+}

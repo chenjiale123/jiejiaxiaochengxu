@@ -1,0 +1,173 @@
+/* pages/setting/setting.wxss */
+/* pages/shopCar/shopCar.wxss */.contain{
+  width: 100%;
+  height: auto;
+  background-color: rgba(242,245,247,1);
+  position: relative;
+  border-radius:30rpx 30rpx 0px 0px;
+  overflow: hidden;
+  padding-bottom: 20rpx;
+}
+.information{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: #fff;
+  margin-top: 30rpx;
+  text-align: center;
+}
+.information>text{
+  display: block;
+  height: 120rpx;
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,76,79,1);
+text-align: center;
+line-height:120rpx ;
+/* padding-top: 20rpx; */
+}
+.information>.item{
+  padding:  33rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(240,240,240,1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.information>.item>.left>text{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.information>.item>.right>.avtor{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 11rpx;
+  border-radius: 50%;
+}
+.information>.item>.right .icon{
+  width: 44rpx;
+  height: 44rpx;
+  vertical-align: middle;
+}
+.information>.item>.right text{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+margin-right: 12rpx;
+vertical-align: middle;
+}
+.nick{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background:rgba(0,0,0,0.4);
+  top: 0;
+  left: 0;
+}
+.sex{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background:rgba(0,0,0,0.4);
+  top: 0;
+  left: 0;
+}
+.nickname{
+  padding: 0 30rpx;
+  width: 100%;
+  height:548rpx;
+background:rgba(255,255,255,1);
+border-radius:30rpx 30rpx 0px 0px;
+position: absolute;
+left: 0;
+bottom: 0;
+box-sizing: border-box;
+}
+.nickname>.top{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 97rpx;
+  align-items: center;
+  border-bottom: 1px solid rgb(194, 192, 192);
+}
+.nickname>.top>text:nth-child(1){
+  font-size:26rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+}
+.nickname>.top>text:nth-child(2){
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(51,51,51,1);
+}
+.nickname>.top>text:nth-child(3){
+  font-size:26rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,77,80,1);
+}
+.nickname>.bottom{
+padding-top: 42rpx;
+
+}
+.nickname>.bottom>input{
+  width: 100%;
+  margin: 0 auto;
+  height:100rpx;
+background:rgba(242,245,247,1);
+border-radius:20rpx;
+padding-left: 27rpx;
+box-sizing: border-box;
+}
+.nickname>.bottom>text{
+  font-size:26rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(179,179,179,1);
+margin-top: 25rpx;
+
+}
+.sexname{
+  width: 94%;
+  height: 370rpx;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -47%;
+}
+.sexname>view{
+  width: 100%;
+  height: 110rpx;
+  background: #fff;
+  text-align: center;
+  line-height: 110rpx;
+  /* border-radius:14rpx; */
+}
+.sexname>view>image{
+  width: 36rpx;
+  height: 36rpx;
+}
+.sexname>view>text{
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.sexname>view:nth-child(3){
+  margin-top: 20rpx;
+  border-radius: 14rpx;
+}
+.sexname>view:nth-child(1){
+  border-radius: 14rpx 14rpx 0 0;
+}
+.sexname>view:nth-child(2){
+  border-radius: 0 0 14rpx 14rpx;
+}

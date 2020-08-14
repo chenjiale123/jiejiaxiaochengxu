@@ -1,0 +1,210 @@
+<!--pagesSinger//pages/placeOrder/placeOrder.wxml-->
+<view class="contain1">
+
+	<view class="address">
+		<view class="top" wx:if="{{orderDetail.memberAddress==null}}" bindtap="select">
+			<image src="../../../image/tjia1@3x.png"></image>
+			<text>新建服务地址</text>
+		</view>
+		<view class="next" wx:else bindtap="select">
+			<view class="addlist">
+				<text>{{detail.address}}</text>
+				<image src="../../../image/jinru12@2x.png"></image>
+			</view>
+
+			<view class="name">
+				<text>{{detail.contactName}}</text>
+				<text>{{detail.contactNumber}}</text>
+			</view>
+		</view>
+		<view class="down">
+			<text>服务时间</text>
+
+
+			<picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+				<view>
+					<text>{{orderData}}</text>
+					<image src="../../../image/xyibu@2x.png"></image>
+				</view>
+			</picker>
+		</view>
+	</view>
+
+
+	<view class="main1">
+		<view class="title">
+			<image src="../../../image/dp12@2x.png"></image>
+			<text>{{orderDetail.storeName}}</text>
+			<button>{{orderDetail.goodClassName}}</button>
+
+
+
+
+		</view>
+		<view class="lock" wx:if="{{orderDetail.storeStatus!==3}}">
+			<view class="left">
+				<image src="../../../image/tishi.png"></image>
+				<text wx:if="{{orderDetail.storeStatus==1}}">门店已删除</text>
+				<text wx:else="{{orderDetail.storeStatus==2}}">门店已停业</text>
+			</view>
+			<view class="right">
+				<button bindtap="changeStore">切换门店</button>
+			</view>
+		</view>
+		<view class="goodList">
+			<view class="item" wx:for="{{orderDetail.marketOrderGoodsList}}" wx:key="index">
+				<view class="lock" wx:if="{{item.status!==1}}">
+					<view class="left">
+						<image src="../../../image/tishi.png"></image>
+						<text wx:if="{{item.status==2}}">商品已下架</text>
+						<text wx:elif="{{item.status==3}}">商品库存不足</text>
+						<text wx:elif="{{item.status==4}}">商品无库存</text>
+						<text wx:else="{{item.status==5}}">商品已删除</text>
+					</view>
+					<view class="right">
+						<button bindtap="payAgain" data-id="{{item.goodsInfoId}}">重新下单</button>
+					</view>
+				</view>
+
+				<image src="{{item.goodsSpecImg}}" wx:if="{{item.goodsSpecImg!==''}}"></image>
+					<image src="{{item.goodsImg}}"  wx:if="{{item.goodsSpecImg==''}}"></image>
+				<view class="right">
+					<text class="txt">{{item.goodsName}}</text>
+					<view class="txttwo" wx:for="{{item.goodsSpec}}" style="display:inline-block">
+						<text  wx:key="index">{{item.specValueName}},</text>
+
+					</view>
+					<view class="price">
+						<text>￥{{item.goodsPrice}}</text>
+						<text>X {{item.goodsNumber}}</text>
+					</view>
+
+				</view>
+			</view>
+			<view class="allPri">
+				<view class="money">
+					<text>商品金额</text>
+					<text>￥{{orderDetail.goodsPrice}}</text>
+				</view>
+				<view class="money">
+					<text>服务费</text>
+					<text>+￥{{orderDetail.servicePrice}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="all">
+			<text>合计：</text>
+			<text>￥{{orderDetail.orderPrice}}</text>
+		</view>
+
+	</view>
+
+	<view class="remain">
+		<view class="way" bindtap="leave">
+			<text>买家留言</text>
+			<view class="sole">
+
+				<text wx:if="{{info==''}}">给门店留言(50字以内）</text>
+				<text wx:else="{{info!==''}}" class="liuyan">{{info}}</text>
+				<image src="../../../image/jinru12@2x.png"></image>
+
+			</view>
+
+		</view>
+		<view class="pay">
+			<text>支付方式</text>
+			<text>在线支付</text>
+		</view>
+	</view>
+
+	<view class="btn">
+		<text style="padding-left:30rpx">￥{{orderDetail.orderPrice}}</text>
+		<button bindtap="submit">提交订单</button>
+	</view>
+
+
+
+	<!-- 地址选择 -->
+
+	<view class="cu" wx:if="{{hidden}}" catchtouchmove='ture'>
+
+		<view class='whole'>
+			<view class="select">
+				<view class="title">
+					<text>选择地址</text>
+					<image src="../../../image/shanchu1@2x.png" bindtap="close"></image>
+				</view>
+			</view>
+			<view class='contain' hidden="{{list.length==0}}">
+
+				<view class='list'>
+					<radio-group bindchange="radioChange" class="con">
+						<label class="tp" wx:for="{{list}}" wx:key="index" wx:if="{{item.isValid==0}}">
+
+							<view class="tp1" data-item="{{item}}">
+								<view class='right'>
+									<radio checked="{{item.isDefault=='0'}}" data-id="{{index}}" value="{{index}}" class="radio" />
+
+									<view class="main" >
+										<view class='address1'>
+											<image src="../../../image/moren@3x.png" wx:if="{{item.isDefault=='0'}}"></image>
+											<text >{{item.address}}</text>
+										</view>
+
+										<text class='name'>{{item.contactName}}</text>
+										<text class='phone'>{{item.contactNumber}}</text>
+									</view>
+								</view>
+								<view class='right2' bindtap='edit' data-id="{{item.id}}" bindtap="edit">
+									<image src="../../../image/bianji@3x.png"></image>
+								</view>
+							</view>
+						</label>
+						<label class="tp2" wx:for="{{list}}" wx:key="index" wx:if="{{item.isValid==1}}">
+
+							<text>超服务范围地址</text>
+							<view class="tp1" data-item="{{item}}">
+								<view class='right'>
+									<radio checked="{{item.isDefault=='0'}}" data-id="{{index}}" value="{{index}}" class="radio" />
+
+									<view class="main">
+										<view class='address1'>
+											<image src="../../../image/moren@3x.png" wx:if="{{item.isDefault=='0'}}"></image>
+											<text >{{item.address}}</text>
+										</view>
+
+										<text class='name'>{{item.contactName}}</text>
+										<text class='phone'>{{item.contactNumber}}</text>
+									</view>
+								</view>
+								<view class='right2' bindtap='edit' data-id="{{item.id}}" bindtap="edit">
+									<image src="../../../image/bianji@3x.png"></image>
+								</view>
+							</view>
+						</label>
+
+					</radio-group>
+
+
+
+				</view>
+
+				<button bindtap="sure">
+					<image src="../../../image/tianjia@2x.png"></image>
+					<text>新建服务地址</text>
+				</button>
+
+			</view>
+
+			<view class="contain" hidden="{{list.length>0}}">
+				<image src="../../../image/wudizhi@2x.png"></image>
+				<button bindtap="sure">新建服务地址</button>
+
+			</view>
+
+
+		</view>
+
+
+	</view>
+</view>

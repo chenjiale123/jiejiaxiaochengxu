@@ -1,0 +1,16 @@
+<!--pagesSinger//pages/leaveMessage/leaveMessage.wxml-->
+<view class="contain">
+
+<view class="txt">
+<image src="../../../image/biajji@2x.png"></image>
+<textarea placeholder="请输入偏好等要求，给门店留言" placeholder-class="message" bindinput="leave" maxlength='50'></textarea>
+<view class="num">
+<text>{{message.length}}</text>
+<text>/50</text>
+</view>
+
+</view>
+<button bindtap="finish" class="btn1" hidden="{{!hidden}}" >确认</button>
+<button bindtap="finish" class="btn2" hidden="{{hidden}}">确认</button>
+
+</view>

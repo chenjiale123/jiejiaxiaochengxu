@@ -1,0 +1,29 @@
+<!--pages/phoneLogin/phoneLogin.wxml-->
+<view class="contain">
+	<view class="phone">
+		<input placeholder="请输入手机号" placeholder-class="placeholder-class" bindinput="userphone" maxlength="11"> </input>
+
+
+		<text  wx:if="{{code}}">{{time}}s</text>
+		<text style="color:{{codeColor}};"  bindtap='sendCode' wx:else>获取动态验证码</text>
+	</view>
+
+	<view class="code">
+		<input placeholder="请输入验证码" placeholder-class="placeholder-class" bindinput="inputWatch" maxlength="6"></input>
+
+	</view>
+
+	<button class="loginBtn" wx:if="{{btn}}" disabled   hover-class="none"> 登录</button>
+
+	<button class="loginBtn2" wx:else bindtap="login"   hover-class="none">
+		<image src="../../../image/button@3x.png"></image>
+		<text>登录</text>
+	</button>
+
+
+	 <view class="deal">
+  登录代表您已同意
+  <text>洁佳生活用户协议、隐私政策</text>
+                            
+ </view>
+</view>

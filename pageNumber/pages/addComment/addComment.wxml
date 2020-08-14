@@ -1,0 +1,55 @@
+<!--pages/addComment/addComment.wxml-->
+<view class='contain'>
+
+
+
+	<view class="content">
+
+		<view class="goods">
+			<view class="top">
+				<image src="../../../image/dp12@2x.png"></image>
+				<text>{{goods.storeName}}</text>
+			</view>
+			<view class="main">
+				<image src="{{goods.specImg}}"></image>
+				<view class="right">
+					<text class="title">{{goods.goodsName}}</text>
+					<text class="info" wx:if="{{goods.specValue!==null}}">{{goods.specValue}}</text>
+				</view>
+			</view>
+
+			<view class="star">
+				<text class="dis">描述相符</text>
+				<multiple-rate bindchange="handleChange" data-id="{{index}}">
+				</multiple-rate>
+
+				<text class="com" wx:if="{{xing==5}}">非常满意</text>
+				<text class="com" wx:if="{{xing==4}}">满意</text>
+				<text class="com" wx:if="{{xing==3}}">还算满意</text>
+				<text class="com" wx:if="{{xing==2}}">不满意</text>
+				<text class="com" wx:if="{{xing==1}}">非常不满意</text>
+			</view>
+			<view class="detail">
+				<image src="../../../image/bianji1@2x.png"></image>
+				<textarea placeholder="请输入评价信息" placeholder-class="tst" bindinput="text"></textarea>
+
+			</view>
+			<view class="upload">
+
+				<uploadImages bindmyevent="myEventListener" count='{{countPic}}' showUrl="{{showImgUrl}}" uploadUrl="{{uploadImgUrl}}" goodsid="{{goods.goodsInfoId}}" moduleType="{{goods.moduleType}}"></uploadImages>
+
+
+
+				<view class="more">最多添加 <text>5</text>张图片</view>
+			</view>
+			<view class="name">
+				<text>匿名评价</text>
+				<switch bindchange="switchChange" color="#FF383B"></switch>
+			</view>
+		</view>
+		<button bindtap="sub" hover-class="none">发布</button>
+	</view>
+
+
+
+</view>

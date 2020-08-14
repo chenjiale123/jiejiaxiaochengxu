@@ -1,0 +1,325 @@
+
+.contain{
+  width: 100%;
+  height: auto;
+  background-color: rgba(242,245,247,1);
+  overflow: hidden;
+  padding-top: 32rpx;
+}
+.content{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background:rgba(255,255,255,1);
+border-radius:30rpx 30rpx 0px 0px;
+padding: 0 30rpx;
+padding-top:25rpx ;
+box-sizing: border-box;
+}
+.goods{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.goods>.top>image{
+width: 36rpx;
+height: 36rpx;
+vertical-align: middle;
+}
+.goods>.top>text{
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(26,26,26,1);
+}
+.goods>.main{
+  margin-top: 28rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.goods>.main>image{
+  width: 128rpx;
+  height: 128rpx;
+  border-radius:12rpx;
+}
+.goods>.main>.right{
+  width: 77%;
+  height: 128rpx;
+
+}
+.goods>.main>.right>.title{
+  display: block;
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(102,102,102,1);
+}
+.goods>.main>.right>.info{
+  margin-top: 23rpx;
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+}
+.goods>.star{
+  margin-top: 47rpx;
+}
+.goods>.star>.dis{
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(102,102,102,1);
+}
+.goods>.star>.com{
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(102,102,102,1);
+margin-left: 30rpx;
+}
+.goods>.detail{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-top: 52rpx;
+  position: relative;
+}
+.goods>.detail>textarea{
+  width: 94%;
+  height:298rpx;
+background:rgba(247,249,250,1);
+border-radius:12rpx;
+margin: 0 auto;
+padding-left: 65rpx;
+padding-top: 18rpx;
+
+}
+.goods>.detail>image{
+  width: 36rpx;
+  height: 36rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  z-index: 99999;
+}
+.tst{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(179,179,179,1);
+
+}
+.goods>.upload{
+  margin-top: 28rpx;
+}
+.goods>.upload>.more{
+  margin-top: 20rpx;
+  font-size:26rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(179,179,179,1);
+}
+.goods>.upload>.more>text{
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:#FF4C4F;
+}
+.goods>.name{
+  margin-top: 59rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.goods>.name>text{
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+
+
+button{
+  margin: 0 auto;
+  margin-top: 66rpx;
+  width: 91%;
+  height:80rpx;
+  background:linear-gradient(-10deg,rgba(255,56,59,1) 0%,rgba(255,166,76,1) 100%);
+  border-radius:40rpx 40rpx 40rpx 40rpx;
+  font-size:28rpx;
+font-family:Microsoft YaHei;
+font-weight:400;
+color:rgba(255,255,255,1);
+margin-bottom: 77rpx;
+}
+
+
+.wx-switch-input{
+zoom: 0.6;
+
+
+}
+
+
+
+icon {
+
+  vertical-align: middle;
+
+}
+
+.weui-cell {
+
+  padding: 10px 15px;
+
+  position: relative;
+
+  display: -webkit-box;
+
+  display: -webkit-flex;
+
+  display: flex;
+
+  align-items: center;
+
+}
+
+.weui-cell_input {
+
+  padding-top: 0;
+
+  padding-bottom: 0;
+
+}
+
+.weui-uploader__hd {
+
+  display: -webkit-box;
+
+  display: -webkit-flex;
+
+  display: flex;
+
+  padding-bottom: 10px;
+
+  align-items: center;
+
+}
+
+.weui-uploader__title {
+
+  flex: 1;
+
+}
+
+.weui-uploader__info {
+
+  color: #b2b2b2;
+
+}
+
+.weui-uploader__bd {
+
+  margin-bottom: -4px;
+
+  margin-right: -9px;
+
+  overflow: hidden;
+
+}
+
+.weui-uploader__file {
+
+  float: left;
+
+  margin-right: 9px;
+
+  margin-bottom: 9px;
+
+}
+
+.weui-uploader__img {
+
+  display: block;
+
+  width: 79px;
+
+  height: 79px;
+
+}
+
+.weui-uploader__input-box {
+
+  float: left;
+
+  position: relative;
+
+  margin-right: 9px;
+
+  margin-bottom: 9px;
+
+  width: 77px;
+
+  height: 77px;
+
+  border: 1px solid #d9d9d9;
+
+}
+
+.weui-uploader__input-box:before, .weui-uploader__input-box:after {
+
+  content: " ";
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background-color: #d9d9d9;
+
+}
+
+.weui-uploader__input-box:before {
+
+  width: 2px;
+
+  height: 39.5px;
+
+}
+
+.weui-uploader__input-box:after {
+
+  width: 39.5px;
+
+  height: 2px;
+
+}
+
+.weui-uploader__input {
+
+  position: absolute;
+
+  z-index: 1;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  opacity: 0;
+
+}
+
+ 
+
+.hideTrue {
+
+  display: none
+
+}
+

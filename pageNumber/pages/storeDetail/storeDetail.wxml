@@ -1,0 +1,72 @@
+<!--pages/storeDetail/storeDetail.wxml-->
+<view class="contain">
+	<view class="top {{hidden==true?'active1':''}}" >
+		<view class="logo" bindtap="back">
+			<view class="left" bindtap="back">
+				<image src="../../../image/fanhui@2x.png"></image>
+			</view>
+			<view class="right">
+				<image src="../../../image/gengduo.png"></image>
+			</view>
+		</view>
+
+		<text>门店详情</text>
+	</view>
+
+	<view class="bg">
+		<image src="{{storeDetail.logo}}"></image>
+	</view>
+
+	<view class="content">
+
+		<view class="name">
+			<view class="left">
+				<text>{{storeDetail.name}}</text>
+				<text>{{storeDetail.features}}</text>
+			</view>
+			<image src="{{storeDetail.logo}}"></image>
+		</view>
+
+		<view class="infor">
+			<view class="bottom">
+				<view class="left">
+					<text>电话</text>
+					<text>{{storeDetail.contactPhone}}</text>
+				</view>
+
+				<view class="right" bindtap="dianhua">
+					<image src="../../../image/dianhua@2x.png"></image>
+					<text>拨打</text>
+				</view>
+			</view>
+			<view class="bottom">
+				<view class="left">
+					<text>地址</text>
+					<text>{{storeDetail.address}}</text>
+				</view>
+
+				<view class="right" bindtap="daohang">
+					<image src="../../../image/daohang@2x.png"></image>
+					<text>导航</text>
+				</view>
+			</view>
+		</view>
+
+		<view class="gov">
+			<view class="header">
+				<image src="../../../image/biaoti@2x.png"></image>
+				<text>店内环境</text>
+			</view>
+
+      <view class="com">
+			<!-- {{storeDetail.introduction}} -->
+
+			    <import src="../../../wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      <!-- <image src="../../image/ding.png"></image>
+      <text>商品分类的方法各种各亲，根据不同方法，可以划分出不同的商品类别。从商品营销学的角度看，有意义的分类主要包括以下几咱：</text> -->
+      </view>
+		</view>
+	</view>
+
+</view>

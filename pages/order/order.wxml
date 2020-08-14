@@ -1,0 +1,86 @@
+<!--pages/order/order.wxml-->
+<!--pages/myComment/myComment.wxml-->
+<!--pages/mine/mine.wxml-->
+
+<view class="contain">
+	<view class="bg">
+		<text>全部订单</text>
+	</view>
+
+
+	<view class="sroll">
+		<view class="swiper-tab">
+			<view class="swiper-tab-item {{currentTab==item.id?'active':''}}" data-current="{{item.id}}" bindtap="clickTab" wx:for="{{tree}}" wx:key="index" data-id="{{item.id}}">
+				<text>{{item.name}}</text>
+				<view class="dibu"></view>
+			</view>
+		</view>
+	</view>
+
+	<view class="{{currentTab == item.id ? 'show':'hidden'}}" wx:for="{{tree}}">
+
+		<view class="item" wx:for="{{orderList}}" wx:key="index" wx:if="{{orderList.length>0}}">
+			<view class="store">
+				<view class="left">
+					<image src="../../image/dp12@2x.png" class="img"></image>
+					<text>{{item.storeName}}</text>
+					<image src="../../image/jinru (1).png" class="icon"></image>
+				</view>
+				<view class="right">
+					<text wx:if="{{item.status==1}}">待付款</text>
+					<text wx:if="{{item.status==2}}">待确认</text>
+					<text wx:if="{{item.status==3}}">已确认</text>
+					<text wx:if="{{item.status==4}}">已派工</text>
+					<text wx:if="{{item.status==5}}">进行中</text>
+					<text wx:if="{{item.status==6}}">已服务</text>
+					<!-- <text wx:if="{{item.status==7}}">已完成</text> -->
+
+					<image src="../../image/yiwanc@2x.png" wx:if="{{item.status==7}}"></image>
+					<text wx:if="{{item.status==8}}">已取消</text>
+					<text wx:if="{{item.status==801}}">退款申请中</text>
+					<text wx:if="{{item.status==802}}">退款中</text>
+					<text wx:if="{{item.status==803}}">退款成功</text>
+				</view>
+			</view>
+
+			<view class="center">
+				<button>便利店</button>
+				<text style="display:inline-block;width:500rpx; overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">服务时间：{{item.serviceTimeStart}}-{{item.serviceTimeEnd}}</text>
+			</view>
+
+
+
+			<view class="tpList" bindtap="orderDetail" data-id="{{item.orderId}}" data-status="{{item.status}}">
+				<view class="imgList" style=" overflow:auto;white-space: nowrap;" scroll-x>
+
+					<image src="{{item.goodsSpecImg}}" wx:if="{{item.goodsSpecImg!==''}}" wx:for="{{item.orderListGoodsList}}" wx:key="index"></image>
+					<image src="{{item.goodsImg}}" wx:if="{{item.goodsSpecImg==''}}" wx:for="{{item.orderListGoodsList}}" wx:key="index"></image>
+					<view class="info" wx:if="{{item.orderListGoodsList.length==1}}" wx:for="{{item.orderListGoodsList}}" wx:for-item="items" wx:key="index">
+						<text> {{items.goodsName}}</text>
+
+					</view>
+
+				</view>
+				<view class="load">
+					<image src="../../image/zhezh22@2x.png"></image>
+					<text class="pri">￥{{item.orderPrice}}</text>
+					<text class="num"> 共{{item.goodsNumber}}件</text>
+				</view>
+
+			</view>
+
+			<view class="btnList">
+				<button wx:if="{{item.status==1}}" bindtap="pay"  data-item="{{item}}">立即付款</button>
+				<button wx:if="{{item.status==1||item.status==2}}" bindtap="cancelOrder" data-id="{{item.orderId}}">取消订单</button>
+
+				<button wx:elif="{{item.status==3}}" bindtap="finish" data-id="{{item.orderId}}" >订单完成</button>
+				<button wx:else bindtap="againOrder" data-item="{{item}}">再来一单</button>
+			</view>
+
+		</view>
+	<view class="item"  wx:if="{{orderList.length==0}}">
+	<image src="../../image/wudd1@2x.png"></image>
+</view>
+	</view>
+
+</view>

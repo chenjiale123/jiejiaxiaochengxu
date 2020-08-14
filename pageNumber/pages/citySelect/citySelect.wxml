@@ -1,0 +1,53 @@
+<view class="contain">
+ 
+ <view class="map-inputtips-input">
+
+  <input  placeholder="搜索"   placeholder-class="inputClass"   bindfocus="focus">
+  <image src="../../../image/sousuo@2x.png"></image>
+  </input>
+</view>
+
+<view class="client">
+<image src="../../../image/dw02@2x.png"></image>
+<text>当前定位城市：{{cityName}}</text>
+
+</view>
+
+<view class="hot">
+
+<text>热门城市</text>
+
+<view class="citylist" >
+
+<view wx:for="{{hotCity}}" wx:key="index" data-local="{{item.jd}},{{item.wd}}"  data-code="{{item.adCode}}" data-city="{{item.adName}}" bindtap="bindCity">{{item.adName}}</view>
+
+</view>
+
+</view>
+
+<scroll-view scroll-y="true" style="height: {{winHeight}}px;" scroll-into-view="{{scrollTopId}}" class="city_list">
+  <block wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName" wx:key="{{idx}}">
+    <text id="{{idx}}" class="list_tit">{{idx}}</text>
+    <block wx:for="{{cityName}}">
+      <view class="list_con" data-city="{{item.adName}}" bindtap="bindCity" data-local="{{item.jd}},{{item.wd}}" data-code="{{item.adCode}}">{{item.adName}}</view>
+    </block>
+  </block>
+</scroll-view>
+<!--城市选择列表-->
+<view class="scroll_list" bindtouchstart="chStart" bindtouchend="chEnd" 
+style="background: rgba(0,0,0,{{trans}});">
+ <!-- <view class="right-title">历史</view>
+ <view class="right-title">热门</view> -->
+  <block wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName" wx:key="{{idx}}">
+      <view id="{{idx}}" class="scroll_list_chi" style="line-height:{{lineHeight}}px ; height:{{lineHeight}}px ;font-size:24rpx;" bindtouchstart="getWords" bindtouchend="setWords">{{idx}}</view>
+  </block>
+</view>
+
+<!--选择显示-->
+<view hidden="{{hidden}}" class="showwords">
+  {{showwords}}
+  
+</view>
+</view>
+
+

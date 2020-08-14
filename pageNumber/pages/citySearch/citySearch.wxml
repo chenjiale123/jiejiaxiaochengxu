@@ -1,0 +1,21 @@
+<view class="contain">
+
+<view class="map-inputtips-input">
+
+  <input  placeholder="搜索"   placeholder-class="inputClass"   bindinput="search">
+  <image src="../../../image/sousuo@2x.png"></image>
+  </input>
+</view>
+
+
+  <view class="address" hidden="{{cityList.length==0}}">
+   <view class="Item" wx:for="{{cityList}}" data-local="{{item.jd}},{{item.wd}}" wx:key="index" bindtap="selectItem" data-name="{{item.adName}}" >
+   <text>{{item.mergerName}}</text>
+  
+   
+   </view>
+  </view>
+    <view hidden="{{cityList.length>0}}" class="address">
+    <image src="../../../image/souwu@2x.png"></image>
+    </view>
+</view>

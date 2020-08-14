@@ -1,0 +1,79 @@
+<!--pages/goodSearch/goodSearch.wxml-->
+<view class="contain">
+	<view class="top">
+		<view class="logo" bindtap="back">
+			<view class="left">
+				<image src="../../../image/fanhui@2x.png"></image>
+			</view>
+			<view class="right">
+				<image src="../../../image/gengduo.png"></image>
+			</view>
+		</view>
+		<view class="search">
+			<input placeholder="搜索服务商品名称" placeholder-class="input" bindconfirm="searchSubmitFn">
+			<image src="../../../image/sousuo@2x.png"></image>
+			</input>
+		</view>
+	</view>
+
+	<view class="list" wx:if="{{hidden}}">
+
+		<view class="history" >
+			<view class="head">
+				<text>历史搜索</text>
+				<image src="../../../image/shanchu@2x.png" bindtap="historyDelFn"></image>
+			</view>
+			<view class="btnlist">
+				<button wx:for="{{searchRecord}}" wx:key='{{item}}'>{{item.value}}</button>
+		
+			</view>
+		</view>
+
+		<view class="hot" >
+			<view class="header">
+				<text>热门搜索</text>
+
+			</view>
+			<view class="btnlist">
+				<button wx:for="{{hotList}}" wx:key="index" data-id="{{item.hotKeywordName}}" bindtap="search">{{item.hotKeywordName}}</button>
+
+			</view>
+
+		</view>
+	</view>
+
+	<view class="goodlist" wx:if="{{!hidden}}"  hidden="{{goodsList.length==0}}">
+		<scroll-view class="classify" scroll-x>
+			<button wx:for="{{goodData}}" wx:key="index" class="{{currentTab==index?'select':''}}" bindtap="change" data-current="{{index}}" data-type="{{item.moduleType}}" data-id="{{item.id}}">{{item.className}}</button>
+
+		</scroll-view>
+
+		<view class="listItem" >
+
+			<view class="Item" wx:for="{{goodsList}}" wx:key="index" bindtap="detail" data-id="{{item.id}}">
+				<image src="{{item.mainImg}}"></image>
+				<view class="init">
+					<text class="title">{{item.name}}</text>
+					<text class="info">{{item.title}}</text>
+					<view class="price">
+						<view class="left">
+							￥<text>{{item.price}}</text>
+						</view>
+						<view class="right">
+							<text>已售{{item.saleNumber}}</text>
+							<text>|</text>
+							<text>好评{{item.goodRate}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+	
+		</view>
+
+	</view>
+		<view class="goodlist" wx:if="{{!hidden}}" hidden="{{goodsList.length>0}}">
+			 <image src="../../../image/souwu@2x.png"></image>
+			
+			</view>
+
+</view>

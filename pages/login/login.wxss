@@ -1,0 +1,91 @@
+/* pages/login/login.wxss */
+.contain{
+  width: 100%;
+  height: 100%;
+  padding-top: 166rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.logo{
+  width: 376rpx;
+  height: auto;
+  overflow: hidden;
+  margin:0 auto;
+  text-align: center;
+ 
+}
+.logo image:nth-child(1){
+  width: 144rpx;
+  height: 144rpx;
+}
+.logo image:nth-child(2){
+  width: 100%;
+  height: 56rpx;
+  margin-top: 27rpx;
+}
+.loginBtn{
+  width: 90%;
+  height: auto;
+  overflow: auto;
+  margin:0 auto;
+  margin-top: 285rpx;
+}
+.loginBtn>.wx{
+  display: inline-block;
+  width: 100%;
+  height: 98rpx;
+  position: relative;
+  line-height: 78rpx;
+
+}
+.loginBtn>.wx>text{
+  position: relative;
+  text-align: center;
+  font-size:30rpx;
+font-family:Microsoft YaHei;
+font-weight:400;
+color:rgba(255,255,255,1);
+z-index: 999999;
+
+}
+.loginBtn>.wx>image{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.loginBtn>.phone{
+  display: inline-block;
+  width: 100%;
+  height: 98rpx;
+  position: relative;
+ background-color: #fff;
+ margin-top: 10rpx;
+ font-size:30rpx;
+font-family:Microsoft YaHei;
+font-weight:400;
+color:rgba(51,51,51,1);
+text-align: center;
+}
+
+.deal{
+  width: 520rpx;
+position: fixed;
+  left: 50%;
+  margin-left: -260rpx;
+ 
+  font-size:24rpx;
+font-family:Microsoft YaHei;
+font-weight:400;
+bottom: 50rpx;
+
+}
+.deal>text{
+  font-size:24rpx;
+  font-family:Microsoft YaHei;
+  font-weight:400;
+  color:#FF4C4F;
+}
+
+

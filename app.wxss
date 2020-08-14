@@ -1,0 +1,28 @@
+/**app.wxss**/
+page{
+
+
+
+ }
+.contain {
+  height: 100%;
+  width: 100%;
+
+} 
+button::after {
+  border: none;
+}
+button{
+  margin:0;
+  padding:0;
+  background-color:#ffffff;
+
+
+  border-radius:0;
+  border:none;
+  font-size:60rpx;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+

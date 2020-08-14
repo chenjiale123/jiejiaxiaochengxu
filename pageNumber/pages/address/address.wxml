@@ -1,0 +1,33 @@
+<view class="map-inputtips-input">
+<view class="city" bindtap="select">
+  {{cityName}}
+  <image src="../../../image/xiala@2x.png"></image>
+ </view>
+  <input  placeholder="搜索" bindfocus="focus"  placeholder-class="inputClass" >
+  <image src="../../../image/sousuo@2x.png"></image>
+  </input>
+</view>
+
+<view class="map_container">
+  <map class="map" latitude='{{latitude}}' longitude='{{longitude}}' markers='{{markers}}' id="map" class="map"  bindregionchange="regionchange"   >
+   
+    <cover-image class="cover-image" bindtap="my_location" src="../../../image/fubiao@2x.png" />
+    
+  </map>
+
+  <view class="address">
+   <view class="Item" wx:for="{{add}}" data-local="{{item.longitude}},{{item.latitude}}" wx:key="index" bindtap="selectItem" data-name="{{item.name}}">
+      <image wx:if="{{index == 0 ? true : false}}"   src="../../../image/dw01@2x.png"></image>
+        <image wx:else="{{index == 0 ? 'contentShow' : 'contentHiden'}}"   src="../../../image/dw@2x.png"></image>
+   <view class="name">
+
+    <text wx:if="{{index == 0 ? true : false}}" class="etc">{{item.name}}</text>
+       <text wx:else >{{item.name}}</text>
+       <text>{{item.address}}</text>
+   </view>
+ 
+   
+   
+   </view>
+  </view>
+</view>

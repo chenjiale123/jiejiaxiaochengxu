@@ -1,0 +1,519 @@
+/* pagesSinger//pages/refoundListDetail/refoundListDetail.wxss */
+/*  步骤图 */
+
+.stepInfo{
+  width: 100%;
+  height: 295rpx;
+
+  border-radius: 2rpx;
+  z-index: -1;
+ 
+}
+.steps {
+  position: relative;
+  top: 80rpx;
+  counter-reset: step;
+
+}
+.steps {
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+  counter-reset: step; 
+  z-index: 0;/*创建步骤数字计数器*/
+}
+/*步骤描述*/
+.steps .li {
+  list-style-type: none;
+  font-size: 12px;
+  text-align: center;
+
+  position: relative;
+  float: left;
+
+  position: relative;
+}
+
+/*步骤数字*/
+.steps .li:before {
+  display: block;
+  content: counter(step); /*设定计数器内容*/
+  counter-increment: step; /*计数器值递增*/
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #FFB2B4;
+  line-height: 60rpx;
+  border-radius: 60rpx;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  margin: 0 auto 8px auto;
+
+    position: relative;
+}
+
+/*连接线*/
+.steps .li ~ .li:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #FFB2B4;
+  position: absolute;
+  left: -50%;
+  top: 30rpx;
+  z-index: -1; /*放置在数字后面*/
+}
+
+/*将当前/完成步骤之前的数字及连接线变绿*/
+.steps .li.active:before,
+.steps .li.active:after {
+  background-color: #FFB2B4 !important;
+  color: #fff!important;
+}
+
+/*将当前/完成步骤之后的数字及连接线变灰*/
+.steps .li.active ~ .li:before,
+.steps .li.active ~ .li:after {
+  background-color: rgba(233,238,242,1);
+  color: #999999;
+}
+     .txtList>text{
+      font-size:24rpx;
+      font-family:PingFang SC;
+      font-weight:500;
+      color:rgba(51,51,51,1);
+     }
+     .contain{
+       width: 100%;
+       height: auto;
+       overflow: hidden;
+       background-color: #F5F4F7;
+  
+     }
+
+     .top{
+      width: 100%;
+      height: 410rpx;
+      position: relative;
+      padding-top: 62rpx;
+      padding-left: 26rpx;
+      box-sizing: border-box;
+    }
+    .top>.bj{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    }
+    .top>.back{
+      width: 44rpx;
+      height: 44rpx;
+      z-index: 9999999;
+      position: relative;
+    }
+    
+    .top>.status{
+      text-align: center;
+      position: relative;
+      z-index: 999999;
+    }
+    .top>.status>.wallet{
+      text-align: center;
+    }
+    .top>.status>.wallet>image{
+    width: 50rpx;
+    height: 50rpx;
+    vertical-align: middle;
+    
+    }
+    .top>.status>.wallet>text{
+      font-size:44rpx;
+    font-family:PingFang SC;
+    font-weight:bold;
+    color:rgba(26,26,26,1);
+    vertical-align: middle;
+    margin-left: 10rpx;
+    }
+    .top>.status>.pay{
+      margin-top: 35rpx;
+    }
+    .top>.status>.pay>text{
+      display: block;
+      margin: 0 auto;
+      margin-top: 10rpx;
+      font-size:26rpx;
+    font-family:PingFang SC;
+    
+    color:rgba(51,51,51,1);
+    }
+
+    .step{
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      background:rgba(255,255,255,1);
+border-radius:30epx 30epx 0px 0px;
+padding: 30rpx;
+box-sizing: border-box;
+    }
+    .step .button{
+      height:100rpx;
+background:rgba(242,245,247,1);
+border-radius:20rpx;
+font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,76,79,1);
+text-align: center;
+line-height: 100rpx;
+    }
+    .result{
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      background:rgba(255,255,255,1);
+margin-top: 20rpx;
+padding: 30rpx;
+box-sizing: border-box;
+    }
+    .result>.code>text:nth-child(1){
+      font-size:28rpx;
+      font-family:PingFang SC;
+      font-weight:500;
+      color:rgba(102,102,102,1);
+    }
+    .result>.code>text:nth-child(2){
+      font-size:28rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(26,26,26,1);
+margin-left: 30rpx;
+    }
+    .disc{
+      margin-top: 88rpx;
+      height: auto;
+      overflow: hidden;
+    }
+    .title{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .title>.left>image{
+     width: 6rpx;
+     height: 26rpx;
+    }
+    .title>.left>text{
+      font-size:28rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(26,26,26,1);
+margin-left: 10rpx;
+    }
+    .title>.right>text{
+      font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+    }
+    .detail{
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      margin-top: 18rpx;
+    }
+    .detail>text{
+      font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(102,102,102,1);
+display: block;
+    }
+    .detail>.img{
+      margin-top: 21rpx;
+    }
+    .detail>.img>image{
+      width: 128rpx;
+      height: 128rpx;
+      display: inline-block;
+      margin-left: 10rpx;
+    }
+    .store{
+      width: 100%;
+      background:rgba(242,245,247,1);
+border-radius:20rpx;
+height: auto;
+padding: 23rpx;
+box-sizing: border-box;
+    }
+    .palt{
+      width: 100%;
+      background:rgba(242,245,247,1);
+border-radius:20rpx;
+height: auto;
+padding: 23rpx;
+box-sizing: border-box;
+    }
+    .title1{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .title1>.left>text:nth-child(1){
+      font-size:26rpx;
+      font-family:PingFang SC;
+      font-weight:bold;
+      color:rgba(26,26,26,1);
+    }
+    .title1>.left>text:nth-child(2){
+      font-size:22rpx;
+      font-family:PingFang SC;
+      font-weight:bold;
+      color:#FF4C4F;
+    }
+    .title1>.right>text{
+      font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+    }
+    
+    .detail1>text{
+      font-size:26rpx;
+      font-family:PingFang SC;
+      font-weight:500;
+      color:rgba(102,102,102,1);
+      display: block;
+    }
+    .detail1>.img{
+      margin-top: 21rpx;
+    }
+    .detail1>.img>image{
+      width: 128rpx;
+      height: 128rpx;
+      display: inline-block;
+      margin-left: 10rpx;
+    }
+    .good{
+      width: 100%;
+    
+
+height: auto;
+padding: 23rpx;
+box-sizing: border-box;
+background-color: #fff;
+    }
+    .good>.store1{
+      display: flex;
+      justify-content: space-between;
+    }
+    .good>.store1>.left>.dp{
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+    }
+    .good>.store1>.left>text{
+      font-size:30rpx;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(26,26,26,1);
+    vertical-align: middle;
+    }
+    .good>.store1>.left>.icon{
+      width: 40rpx;
+      height: 40rpx;
+      vertical-align: middle;
+    }
+    .good>.store1>.right>button{
+      width:104rpx;
+    height:32rpx;
+    background:rgba(242,245,247,1);
+    border-radius:18rpx 16rpx 16rpx 0px;
+    font-size:20rpx;
+    font-family:PingFang SC;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+    line-height: 30rpx;
+    }
+
+    .list{
+      display: flex;
+      justify-content: space-between;
+      height: auto;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 35rpx;
+    }
+    .list>.left>image{
+    width: 190rpx;
+    height: 190rpx;
+    }
+    .list>.right{
+      width: 67%;
+      height: auto;
+      overflow: hidden;
+    }
+    .list>.right>.txt{
+      font-size:30rpx;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    display: block;
+    }
+    .list>.right>.txt1{
+      display: block;
+      margin-top: 22rpx;
+      font-size:24rpx;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+    }
+    .list>.right>.price{
+      margin-top: 33rpx;
+      font-size:32rpx;
+    font-family:PingFang SC;
+    font-weight:bold;
+    color:rgba(26,26,26,1);
+    display: flex;
+    justify-content: space-between;
+    }
+    .list>.right>.price>text{
+      font-size:28rpx;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+    }
+    .list>.right>.price>button{
+      width:122rpx;
+    height:52rpx;
+    border:1px solid rgba(153,153,153,1);
+    border-radius:26rpx;
+    font-size:22rpx;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    }
+
+    .info{
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    
+      box-sizing: border-box;
+      margin-top: 20rpx;
+      background-color: #fff;
+      padding:  30rpx;
+      box-sizing: border-box;
+    }
+    .info>.item{
+     display: flex;
+     justify-content: space-between;
+     mask-border-width: 40rpx;
+    
+    }
+    .info>.item>.left>text{
+      font-size:26rpx;
+      font-family:PingFang SC;
+      font-weight:500;
+      color:rgba(102,102,102,1);
+    }
+    .info>.item>.right>image{
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+    }
+    .info>.item>.right>text{
+      font-size:26rpx;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(26,26,26,1);
+    vertical-align: middle;
+    }
+    .info>.item>.left{
+      width: 85%;
+    }
+    .info>.item>.right{
+      width: 15%;
+    }
+   .contain>  .code{
+      width: 100%;
+      height: auto;
+      padding: 30rpx;
+      box-sizing: border-box;
+      margin-top: 20rpx;
+      background-color: #fff;
+      overflow: hidden;
+      padding-bottom: 88rpx;
+    }
+
+    .contain>  .code>.copy{
+      margin-bottom: 38rpx;
+    }
+    .contain>  .code>.copy>.txt{
+      font-size:28rpx;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(102,102,102,1);
+    }
+    .contain>   .code>.copy>.txt1{
+      font-size:28rpx;
+    font-family:PingFang SC;
+    font-weight:bold;
+    color:rgba(26,26,26,1);
+    }
+    .contain>   .code>.copy>button{
+      width:76rpx;
+    height:38rpx;
+    background:rgba(242,245,247,1);
+    border-radius:19rpx;
+    font-size:22rpx;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    display: inline-block;
+    margin-left: 20rpx;
+    }
+    .btnList{
+      width: 100%;
+      height:98rpx;
+    background:rgba(255,255,255,1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    }
+    .btnList>button{
+      width:142rpx;
+    height:60rpx;
+    border:1px solid rgba(153,153,153,1);
+    border-radius:30rpx;
+    font-size:24rpx;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    margin-right: 28rpx;
+    }
+    .button1{
+      height:100rpx;
+      background:rgba(242,245,247,1);
+      border-radius:20rpx;
+      padding: 0 30rpx;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+    }
+    .button1>text:nth-child(1){
+      font-size: 30rpx;
+      color: #999;
+    }
+    .button1>text:nth-child(2){
+      font-size: 30rpx;
+      color: rgb(2, 2, 2);
+    }

@@ -1,0 +1,114 @@
+<!--pagesSinger//pages/refoundDetail/refoundDetail.wxml-->
+<view class="contain">
+
+	<view class="result" wx:if="{{detail.status==803}}">
+		<view class="jieguo" >
+			<image src="../../../image/tkcg@2x.png"></image>
+			<text>退款成功</text>
+		</view>
+		<text>最晚7个工作日到账，请您耐心等待！</text>
+	</view>
+	<view class="result"  wx:if="{{detail.status==802}}">
+		<view class="jieguo">
+			<image src="../../../image/tuikz22@2x.png"></image>
+			<text>退款中</text>
+		</view>
+		<text>正在处理您的退款信息，请您耐心等待！</text>
+	</view>
+	<view class="result" wx:if="{{detail.status==801}}">
+			<view class="jieguo" >
+			<image src="../../../image/tuik11@2x.png"></image>
+			<text>退款申请中</text>
+		</view>
+		<text>平台已收到您的退款申请，我们将在1-3个工作日内处 理，请您耐心等待！</text>
+	</view>
+
+	<view class="detail">
+		<view class="item">
+			<text>退款金额</text>
+			<text>{{detail.orderPrice}}元</text>
+		</view>
+		<view class="item">
+			<text>退款账号</text>
+			<text>原支付账户</text>
+		</view>
+	</view>
+
+
+	<view class="step">
+		<view class="title">
+			<image src="../../../image/biaoti11@2x.png"></image>
+			<text>退款流程</text>
+		</view>
+
+
+ <view class="stepInfo">
+		<view class="steps view_ul">
+			<view class="view_li {{index ==0? 'active' : ''}}" wx:for="{{detail.orderRefundRecordList}}" wx:key="index">
+				<view class="txtList" wx:if="{{item.status==1}}">
+					<text >发起取消订单申请</text>
+					<text>平台审核通过后将为您退款</text>
+					<text>{{item.createTime}}</text>
+				</view>
+
+							<view class="txtList" wx:if="{{item.status==2}}">
+					<text >门店同意退款</text>
+					<text>{{item.price}}元的退款申请已提交至洁佳平台</text>
+						<text>{{item.createTime}}</text>
+				</view>
+      				<view class="txtList" wx:if="{{item.status==3}}">
+					<text >洁佳平台受理退款</text>
+					<text>您的退款已被洁佳平台受理</text>
+						<text>{{item.createTime}}</text>
+				</view>
+							<view class="txtList" wx:if="{{item.status==4}}">
+					<text >洁佳平台入账中</text>
+					<text>洁佳平台正将{{item.price}}元入账至您的账号</text>
+						<text>{{item.createTime}}</text>
+				</view>
+
+
+				
+			</view>
+	
+		</view>
+</view>
+
+	</view>
+
+
+  <view class="info">
+  		<view class="title">
+			<image src="../../../image/biaoti11@2x.png"></image>
+			<text>退款信息</text>
+		</view>
+
+    
+		<view class="list" wx:for="{{detail.marketOrderGoodsList}}" wx:key="index">
+			<view class="left">
+				<image src="{{item.goodsImg}}"></image>
+
+			</view>
+			<view class="right">
+				<text class="txt">{{item.goodsName}}</text>
+				<view class="txt1" > <text wx:for="{{item.spc}}" wx:for-item="items">{{items.specValueName}}</text> </view>
+				<view class="price">￥{{item.goodsPrice}}<text> X{{item.goodsNumber}}</text>  <button wx:if="{{orderDetail.status==7}}">申请售后</button></view>
+			</view>
+
+		</view>
+
+  </view>
+
+  <view class="way">
+  <view class="item">
+  <text >退款原因：</text>
+  <text>订单取消时，自动退款</text>
+  </view>
+    <view class="item">
+  <text >订单编号：</text>
+  <text>{{detail.orderNumber}}</text>
+  </view>
+  </view>
+
+	
+</view>

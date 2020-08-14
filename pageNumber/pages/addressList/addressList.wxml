@@ -1,0 +1,52 @@
+<!--pages/address/address.wxml-->
+<view class='whole' >
+	<view class='contain' hidden="{{list.length==0}}">
+		<view class='list'>
+			<radio-group bindchange="radioChange" class="con">
+				<label class="tp" wx:for="{{list}}">
+
+					<!-- 滑动删除 -->
+					<view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-id="{{item.id}}" data-index="{{index}}" style="{{item.shows}}" class="list_del txt">
+
+
+						<view class='right'>
+							<radio checked="{{item.isDefault=='0'}}" data-id="{{index}}" value="{{index}}" class="radio" />
+
+							<view class="main">
+								<view class='address'>
+									<image src="../../../image/moren@3x.png" wx:if="{{item.isDefault=='0'}}"></image>
+									<text >{{item.address}}</text>
+								</view>
+
+								<text class='name'>{{item.contactName}}</text>
+								<text class='phone'>{{item.contactNumber}}</text>
+							</view>
+						</view>
+						<view class='right2' bindtap='edit' data-id="{{item.id}}">
+							<image src="../../../image/bianji@3x.png"></image>
+						</view>
+					</view>
+					<!-- 删除 -->
+					<view data-id="{{item.id}}" data-index="{{index}}" bindtap="delItem" class="list_del del">删除</view>
+				</label>
+
+			</radio-group>
+
+
+
+		</view>
+
+
+	</view>
+
+  <view class="contain" hidden="{{list.length>0}}">
+     <image src="../../../image/wudizhi@2x.png"></image>
+     <button bindtap="sure"   hover-class="none">新建服务地址</button>
+  
+  </view>
+	<button bindtap="sure" hidden="{{list.length==0}}"   hover-class="none">
+		<image src="../../../image/tianjia@3x.png"></image>
+		<text>新建服务地址</text>
+	</button>
+
+</view>

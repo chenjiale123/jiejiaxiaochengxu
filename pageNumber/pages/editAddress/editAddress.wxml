@@ -1,0 +1,58 @@
+<!--pages/addAddress/addAddress.wxml-->
+<view class="contain">
+
+<form bindsubmit="formSubmit" >
+	<view class="item">
+		<text>服务地址</text>
+		<input placeholder="请选择服务地址"  class="Input" placeholder-class="inputClass" disabled value="{{name}}" ></input>
+
+		<view class="local" bindtap="localtion">
+			<image src="../../../image/dw02@2x.png"></image>
+			<text>定位</text>
+		</view>
+	</view>
+
+
+	<view class="item">
+		<text>门牌号</text>
+		<input placeholder="详细地址，例1层101室" placeholder-class="inputClass" class="input" bindinput="code"  name="code" value="{{menpai}}"></input>
+	</view>
+
+
+	<view class="item">
+		<text>联系人</text>
+		<input placeholder="请填写联系人姓名" placeholder-class="inputClass" class="nameInput" bindinput="people"  name="people" value="{{ren}}"></input>
+
+		<radio-group class="radio-group" bindchange="radioChange">
+			<label class="radio" wx:for="{{sexList}}" wx:key="index">
+				<radio class="radio" value="{{item.dictionaryValue}}" checked="{{item.dictionaryValue==key}}"  /><text>{{item.dictionaryValue}}</text>
+			</label>
+		
+		</radio-group>
+	</view>
+
+	<view class="item">
+		<text>手机号码</text>
+		<input placeholder="请填写联系人手机号" placeholder-class="inputClass" class="input" bindinput="phone"  name="phone" value="{{shouji}}"></input>
+	</view>
+
+
+	<view class="default">
+		<view class="left">
+			<text>设置默认地址</text>
+			<text>提醒：每次下单会默认推荐使用该地址</text>
+
+		</view>
+
+		<view class="right">
+			<switch type="switch" checked="{{value1}}" color="#FF383B" bindchange="change" value="{{value1}}"></switch>
+		</view>
+
+
+
+	</view>
+  
+		<button form-type="submit"   hover-class="none">保存并使用</button>
+
+    </form>
+  </view>

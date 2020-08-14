@@ -1,0 +1,20 @@
+<view class='content'>
+  <view class='img-box'>
+    <view class='img-list'>
+      <block wx:for="{{detailPics}}" wx:key="index">
+        <view class='img-item'>
+          <image src='{{item}}'  data-id='{{index}}' class="mainImg"></image>
+
+           <image src="../../image/shanchu1@2x.png" class="icon" bindtap="bindlongpressimg" data-id="{{index}}"></image>
+        </view>
+      </block>
+      <view class='chooseimg' bindtap='uploadDetailImage'>
+        <view class="weui-uploader__input-box">
+        <image src="../../image/tupian.png"></image>
+        <text>上传图片</text>
+        </view>
+      </view>
+    </view>
+    <!-- <view class='tips'>长按对应的图片即可删除</view> -->
+  </view>
+</view>

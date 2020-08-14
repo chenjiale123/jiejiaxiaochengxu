@@ -1,0 +1,24 @@
+<!--pages/addressSearch/addressSearch.wxml-->
+<view class="contain">
+
+	<view class="map-inputtips-input">
+
+		<input placeholder="搜索" placeholder-class="inputClass" bindconfirm="search">
+		<image src="../../../image/sousuo@2x.png"></image>
+		</input>
+	</view>
+
+
+	<view class="address"  hidden="{{add.length==0}}">
+		<view class="Item" wx:for="{{add}}" data-local="{{item.longitude}},{{item.latitude}}" wx:key="index" bindtap="selectItem" data-name="{{item.name}}">
+			<text>{{item.name}}</text>
+
+
+		</view>
+ 
+	</view>
+
+     <view hidden="{{add.length!==0}}" class="address">
+    <image src="../../../image/souwu@2x.png"></image>
+    </view>
+</view>

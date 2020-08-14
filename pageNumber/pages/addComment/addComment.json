@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "uploadImages": "/component/uploadImages/index",
+    "multiple-rate": "../../component/multiple-rate/multiple-rate"
+  },
+
+
+  "navigationBarTitleText": "添加评价",
+  "enablePullDownRefresh": true
+}

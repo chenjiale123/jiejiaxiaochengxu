@@ -1,0 +1,120 @@
+<!--pagesSinger//pages/payment/payment.wxml-->
+<view class="back">
+<image src="../../../image/fanhui@2x.png" bindtap="back"></image>
+<text>订单支付</text>
+</view>
+<view class="contain">
+
+
+
+	<view class="top">
+		<text>支付剩余时间 {{rocallTime}}</text>
+		<view class="money">￥ <text>{{price}}</text></view>
+		<view class="detail1">
+			<text bindtap="detail">{{title}} 订单详情</text>
+			<image src="../../../image/xyibu@2x.png" bindtap="detail"></image>
+		</view>
+	</view>
+
+
+	<view class="way">
+		<radio-group bindchange="radioChange" class="con">
+			<label>
+				<view class="payway">
+					<view class="left">
+						<image src="../../../image/qianbao@2x.png"></image>
+						<view class="yue">
+							<text>钱包</text>
+							<text>当前余额	{{userDetail.remainingSum}}元</text>
+						</view>
+					</view>
+					<view class="right">
+						<radio class="radio" value="1" checked="true" />
+
+					</view>
+
+				</view>
+			</label>
+			<label>
+				<view class="payway">
+					<view class="left">
+						<image src="../../../image/weixin@2x.png"></image>
+						<view class="yue">
+							<text>微信支付</text>
+
+						</view>
+					</view>
+					<view class="right">
+						<radio class="radio" value="2" />
+
+					</view>
+
+				</view>
+			</label>
+		</radio-group>
+		<button bindtap="showInputLayer">确认支付</button>
+	</view>
+
+
+	<view class="cu" wx:if="{{hidden}}">
+		<view class="detail">
+			<view class="head">
+				<view class="line"></view>
+				<view class="txt">
+					<text>订单详情</text>
+				</view>
+			</view>
+			<image src="../../../image/fenjie@2x.png"></image>
+
+			<view class="serve">
+				<text>服务信息</text>
+				<text>  {{infomation.storeAddress}}</text>
+				<text>{{infomation.contactName}}  {{infomation.contactNumber}}</text>
+				<text>{{infomation.createTime}}</text>
+
+			</view>
+			<view class="serve1">
+				<text>服务信息</text>
+				<text> {{infomation.storeName}}-{{infomation.goodClassName}}</text>
+				<view wx:for="{{infomation.marketOrderGoodsList}}">
+					<text>{{item.goodsName}}</text>
+					<text>X{{item.goodsNumber}}</text>
+				</view>
+
+			
+
+			</view>
+
+      		<view class="serve2">
+				<text>买家留言</text>
+				<text> {{infomation.consumerMessage}} </text>
+			
+
+			</view>
+		</view>
+    <image src="../../../image/yiqux1@2x.png" bindtap="close"></image>
+
+	</view>
+
+<view wx:if='{{showPayPwdInput}}' class="cu">
+    <view class='bg_layer'></view>
+    <view class='input_main'>
+        <view class='input_title'>
+        
+            <text>输入支付密码</text>
+						    <view class='input_back' catchtap='hidePayLayer'>
+								<image src="../../../image/guanbi.png"></image>
+								</view>
+        </view>
+     
+        <view class='input_row' catchtap='getFocus'>
+            <view class='pwd_item' wx:for='{{6}}' wx:key='item' wx:for-index='i'>
+                <text wx:if='{{pwdVal.length>i}}'></text>
+            </view>
+        </view>
+    
+        <input class='input_control' password type='number' focus='{{payFocus}}' bindinput='inputPwd' maxlength='6'/>
+    </view>
+</view>
+
+</view>

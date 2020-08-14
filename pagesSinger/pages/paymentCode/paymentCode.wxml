@@ -1,0 +1,40 @@
+<!--pages/phoneChange/phoneChange.wxml-->
+<view class="contain">
+
+
+<view class="send">
+<view class="to">
+<text>发送验证码至  </text>
+<text>+86 {{iphone}}</text>
+</view>
+<view>
+<view class="again">
+
+	<text  wx:if="{{code}}">重新发送{{time}}s</text>
+<text wx:else style="color:#FF4C4F"  bindtap="getCode">获取验证码</text>
+</view>
+</view>
+</view>
+
+<view class="phone">
+
+<input placeholder="请输入验证码" placeholder-class="num" bindinput="code"></input>
+
+</view>
+
+
+<view class="shuru">
+<input placeholder="请输入新密码" placeholder-class="num1" type="{{!hidden1?'password':'text'}}" bindinput="newPassword" maxlength="20"></input>
+<image src="../../../image/buks@2x.png" wx:if="{{!hidden1}}" class="code" bindtap="click3"></image>
+<image src="../../../image/kes @2x.png" wx:else="{{hidden1}}" class="code" bindtap="click4"></image>
+</view>
+<view class="shuru">
+<input placeholder="请再次输入新密码" placeholder-class="num1" type="{{!hidden2?'password':'text'}}" bindinput="againPassword" maxlength="20"></input>
+<image src="../../../image/buks@2x.png" wx:if="{{!hidden2}}" class="code" bindtap="click1"></image>
+<image src="../../../image/kes @2x.png" wx:else="{{hidden2}}" class="code"  bindtap="click2"></image>
+</view>
+
+<button bindtap="change" class="btn1" hidden="{{!hidden}}" >确认</button>
+<button bindtap="change" class="btn2" hidden="{{hidden}}">确认</button>
+</view>
+
